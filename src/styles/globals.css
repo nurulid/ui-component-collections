@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    /* mail */
+    /* .mail-folder__menu:last-child {
+      @apply !mt-4 border-t-2 border-gray-200;
+    } */
+  
+    .mail-folder__menu:hover {
+      @apply bg-gray-100;
+    }
+    .mail-folder__menu.active {
+      @apply bg-gray-100;
+    }
+  
+    .mail-folder__menu.active > svg {
+      @apply text-violet-400;
+    }
+  
+    .active .mail-folder__menu-count {
+      @apply bg-violet-400 text-white;
+    }
+}
