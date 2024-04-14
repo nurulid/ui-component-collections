@@ -89,7 +89,7 @@ export const Navigation = () => {
               // Active: "bg-gray-100" */}
               <li
                 key={title}
-                className={`flex items-center gap-4 py-3 px-4 rounded transition-all ${
+                className={`mail-folder__menu flex items-center gap-4 py-3 px-4 rounded transition-all ${
                   active ? 'active' : ''
                 }`}
               >
@@ -101,7 +101,7 @@ export const Navigation = () => {
                     <span className="text-gray-500">+{unread}</span>
                   ) : null}
                   {/* Active: "bg-violet-400 text-white" */}
-                  <span className="inline-block ml-2 p-2 bg-gray-100 rounded-full">
+                  <span className="mail-folder__menu-count inline-block ml-2 p-2 bg-gray-100 rounded-full">
                     {count}
                   </span>
                 </div>
