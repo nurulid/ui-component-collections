@@ -12,7 +12,7 @@ const config: Config = {
       colors: {
         cool: "#fdfbf8",
         // sand: "#f1e6e0",
-        griey: "#f4f4f4",
+        griey: "#F6F6F6",
         indie: "#962D8F"
       }
     },
