@@ -8,12 +8,18 @@
   }
 
   pre {
-    @apply !bg-transparent border border-dashed border-black/30 rounded !text-gray-400;
+    @apply border border-dashed border-black/30 rounded shadow-lg;
   }
 
   code {
     font-family: var(--font-source-code) !important;
     @apply text-xs;
+  }
+
+  .pattern-boxes {
+    background-color: #fdfdfd;
+    background-image:  linear-gradient(#F6F6F6 1px, transparent 1px), linear-gradient(to right, #F6F6F6 1px, #fdfdfd 1px);
+    background-size: 20px 20px;
   }
 
   a {

@@ -14,7 +14,7 @@ type Props = {
 export const TabPanel: React.FC<Props> = (props) => {
   const { title, ui, code, note } = props;
   return (
-    <Tabs.Root defaultValue="tab1" className="bg-griey p-1 rounded-md">
+    <Tabs.Root defaultValue="tab1" className="bg-griey p-2 rounded-md">
       <div className="mb-2 px-3 pt-2">
         <h2 className='text-xl mb-1'>{title}</h2>
         <div className="flex justify-between flex-row-reverse text-gray-500">
@@ -45,13 +45,13 @@ export const TabPanel: React.FC<Props> = (props) => {
       </div>
       <Tabs.Content
         value="tab1"
-        className="flex justify-center bg-white p-6 border-[0.5px] border-black/20 rounded-md empty:p-0 empty:border-none"
+        className="flex justify-center bg-white p-6 border-[0.5px] border-indie rounded-md empty:p-0 empty:border-none"
       >
         {ui}
       </Tabs.Content>
       <Tabs.Content
         value="tab2"
-        className="flex justify-center bg-white p-6 border-[0.5px] border-black/20 rounded-md empty:p-0 empty:border-none"
+        className="flex justify-center p-6 border-[0.5px] border-indie rounded-md empty:p-0 empty:border-none pattern-boxes"
       >
         {code}
       </Tabs.Content>
