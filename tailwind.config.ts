@@ -1,5 +1,5 @@
 import type { Config } from "tailwindcss";
-const plugin = require('tailwindcss/plugin');
+import plugin from 'tailwindcss/plugin';
 
 const config: Config = {
   content: [
@@ -8,14 +8,18 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
-  },
-  variants: {
     extend: {
-      backgroundColor: ['active'],
-      textColor: ['active'],
+      colors: {
+        cool: "#fdfbf8",
+        // sand: "#f1e6e0",
+        griey: "#f4f4f4",
+        indie: "#FFBF18"
+      }
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(function({ addVariant }) {
+        addVariant('current', '&.active');
+    })],
 };
 export default config;

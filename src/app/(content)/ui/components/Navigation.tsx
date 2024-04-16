@@ -32,17 +32,17 @@ const folderMenus = [
   },
 ];
 
-export const htmlCode = `
-<nav className="max-w-[300px] w-full">
+export const htmlNav = 
+`<nav className="max-w-[300px] w-full">
   <ul>
-    // Active: "bg-gray-100"
+    <!-- Active: "bg-gray-100"-->
     <li className="flex items-center gap-4 py-3 px-4 rounded transition-all active">
-      // Active: "text-violet-400"
+      <!-- Active: "text-violet-400"-->
       <Mail size={33} className="p-2 bg-gray-100 rounded" />
       <h3 className="text-base">Inbox</h3>
       <div className="ml-auto text-xs">
         <span className="text-gray-500">+6</span>
-        // Active: "bg-violet-400 text-white"
+        <!-- Active: "bg-violet-400 text-white"-->
         <span className="inline-block ml-2 p-2 bg-gray-100 rounded-full">
           132
         </span>
@@ -76,8 +76,7 @@ export const htmlCode = `
       </div>
     </li>
   </ul>
-</nav>
-  `;
+</nav>`;
 
 export const Navigation = () => {
   return (
@@ -89,19 +88,18 @@ export const Navigation = () => {
               // Active: "bg-gray-100" */}
               <li
                 key={title}
-                className={`mail-folder__menu flex items-center gap-4 py-3 px-4 rounded transition-all ${
-                  active ? 'active' : ''
-                }`}
+                data-active={active}
+                className={`group flex items-center gap-4 py-3 px-4 rounded transition-all data-[active=true]:bg-gray-100 hover:bg-gray-100`}
               >
                 {/* Active: "text-violet-400" */}
-                <Icon size={33} className="p-2 bg-gray-100 rounded" />
+                <Icon size={33} className="group-data-[active=true]:text-violet-400 p-2 bg-gray-100 rounded" />
                 <h3 className="text-base">{title}</h3>
                 <div className="ml-auto text-xs">
                   {unread ? (
                     <span className="text-gray-500">+{unread}</span>
                   ) : null}
                   {/* Active: "bg-violet-400 text-white" */}
-                  <span className="mail-folder__menu-count inline-block ml-2 p-2 bg-gray-100 rounded-full">
+                  <span className="group-data-[active=true]:bg-violet-400 group-data-[active=true]:text-white inline-block ml-2 p-2 bg-gray-100 rounded-full">
                     {count}
                   </span>
                 </div>
