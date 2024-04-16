@@ -14,24 +14,24 @@ export const TabPanel: React.FC<Props> = (props) => {
   const { ui, code, note } = props;
   return (
     <Tabs.Root defaultValue="tab1">
-      <div className='flex justify-between flex-row-reverse'>
+      <div className='flex justify-between flex-row-reverse mb-2'>
         <Tabs.List className="text-xs space-x-2">
           <Tabs.Trigger
             value="tab1"
-            className="group data-[state=active]:text-black text-gray-500 hover:text-black transition-all p-2"
+            className="group data-[state=active]:text-black text-gray-500 hover:text-black hover:bg-indie/10 rounded-md transition-all p-2"
           >
             <Eye size={16} className="group-data-[state=active]:text-indie inline-block mr-1 -translate-y-[1px]" />
             Preview
           </Tabs.Trigger>
           <Tabs.Trigger
             value="tab2"
-            className="group data-[state=active]:text-black text-gray-500 hover:text-black transition-all p-2"
+            className="group data-[state=active]:text-black text-gray-500 hover:text-black hover:bg-indie/10 rounded-md transition-all p-2"
           >
             <Code size={16} className="group-data-[state=active]:text-indie inline-block mr-1 -translate-y-[1px]" />
             Code
           </Tabs.Trigger>
         </Tabs.List>
-        <div className="mb-4 z-10 relative">{note}</div>
+        <div>{note}</div>
       </div>
       <Tabs.Content
         value="tab1"

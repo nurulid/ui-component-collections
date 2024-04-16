@@ -13,7 +13,7 @@ const config: Config = {
         cool: "#fdfbf8",
         // sand: "#f1e6e0",
         griey: "#f4f4f4",
-        indie: "#FFBF18"
+        indie: "#962D8F"
       }
     },
   },

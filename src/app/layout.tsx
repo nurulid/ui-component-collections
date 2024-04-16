@@ -26,7 +26,7 @@ export default function RootLayout({
       <body className={`${inter.className} ${sourceCodePro.variable}`}>
         <main className='flex relative'>
           <Sidebar />
-          <section className='flex-grow min-h-screen'>{children}</section>
+          <section className='flex-grow min-h-screen max-w-6xl w-full mx-auto'>{children}</section>
         </main>
       </body>
     </html>

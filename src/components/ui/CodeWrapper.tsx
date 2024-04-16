@@ -23,7 +23,7 @@ export const CodeWrapper = (props: Props) => {
     <div className='relative'>
       <button
         onClick={handleCopyClick}
-        className="p-2 w-[90px] bg-griey hover:opacity-70 transition-all rounded-md absolute right-2 top-2 text-xs"
+        className="p-2 w-[90px] bg-indie/10 hover:opacity-70 transition-all rounded-md absolute right-2 top-2 text-xs"
       >
         {copied ? (
           <>
