@@ -8,7 +8,7 @@
   }
 
   pre {
-    @apply border border-dashed border-black/30 rounded shadow-lg;
+    @apply border border-dashed border-black/30 rounded shadow-lg z-[2] relative;
   }
 
   code {
@@ -16,20 +16,39 @@
     @apply text-xs;
   }
 
-  .pattern-boxes {
-    background-color: #fdfdfd;
-    background-image:  linear-gradient(#F6F6F6 1px, transparent 1px), linear-gradient(to right, #F6F6F6 1px, #fdfdfd 1px);
-    background-size: 20px 20px;
-  }
-
   a {
-    @apply underline hover:text-indie;
+    @apply underline underline-offset-2 hover:text-indie;
   }
 }
 
 @layer components {
-  /* mail */
-  .mail-folder__menu:hover {
-    @apply bg-gray-100;
+  .pattern-boxes {
+    background-color: #fdfdfd;
+    background-image: linear-gradient(#f6f6f6 1px, transparent 1px),
+      linear-gradient(to right, #f6f6f6 1px, #fdfdfd 1px);
+    background-size: 20px 20px;
+    position: relative;
+  }
+
+  .pattern-boxes::after {
+    content: '';
+    @apply bg-gradient-to-b from-white/50 to-white block w-full h-[50%] absolute bottom-0 z-[1] rounded-bl-md rounded-br-md;
+  }
+
+  /* sidebar */
+  .mail-sidebar nav a {
+    @apply text-gray-400 hover:text-white py-[10px] px-3 rounded-md hover:bg-gray-800 inline-block relative;
+  }
+
+  .mail-sidebar nav a.active {
+    @apply text-white bg-gray-800;
+  }
+
+  .mail-sidebar nav a.active::after {
+    @apply content-[""] absolute top-0 -right-[27px] block w-[4px] h-full bg-blue-600 rounded-md;
+  }
+
+  .mail-sidebar .nav-bottom a.logout {
+    @apply text-rose-500;
   }
 }

@@ -20,10 +20,10 @@ export const CodeWrapper = (props: Props) => {
   };
 
   return (
-    <div className='relative'>
+    <div className='group relative'>
       <button
         onClick={handleCopyClick}
-        className="p-2 w-[90px] bg-white hover:opacity-80 transition-all rounded absolute right-2 top-2 text-xs"
+        className="p-2 w-[90px] bg-white hover:opacity-80 transition-all rounded absolute right-2 top-2 text-xs opacity-10 group-hover:opacity-100 z-[3]"
       >
         {copied ? (
           <>
