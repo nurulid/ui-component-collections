@@ -5,11 +5,11 @@ import { Sidebar } from '@/components/share/Sidebar';
 
 const inter = Inter({ subsets: ['latin'] });
 
-const sourceCodePro = Source_Code_Pro({ 
-  subsets: ["latin"],
-  variable: "--font-source-code",
-  weight: ["400"]
-})
+const sourceCodePro = Source_Code_Pro({
+  subsets: ['latin'],
+  variable: '--font-source-code',
+  weight: ['400'],
+});
 
 export const metadata: Metadata = {
   title: 'Tailwind UI',
@@ -24,9 +24,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} ${sourceCodePro.variable}`}>
-        <main className='flex relative'>
+        <main className="flex relative">
           <Sidebar />
-          <section className='flex-grow min-h-screen max-w-7xl w-full mx-auto'>{children}</section>
+          <section className="flex-grow min-h-screen w-[calc(100vw-280px)]">
+            <div className="max-w-7xl w-full mx-auto">{children}</div>
+          </section>
         </main>
       </body>
     </html>

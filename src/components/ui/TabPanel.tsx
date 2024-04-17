@@ -37,13 +37,13 @@ export const TabPanel: React.FC<Props> = (props) => {
   return (
     <Tabs.Root defaultValue="tab1" className="bg-griey p-2 rounded-md border">
       <div className="pb-4 pl-3 pt-2">
-        <div className="flex justify-between items-end">
+        <div className="flex justify-between items-end gap-2 flex-wrap">
           <div>
             <h2 className="text-xl font-[400] mb-1 font-mono">{title}</h2>
             <p className="text-gray-500 mb-2">{desc}</p>
             <div className="text-gray-400 text-xs">{note}</div>
           </div>
-          <Tabs.List className="text-xs space-x-1">
+          <Tabs.List className="text-xs space-x-1 ml-auto">
             {tabMenu.map((item, i) => (
               <Tabs.Trigger
                 key={i}
