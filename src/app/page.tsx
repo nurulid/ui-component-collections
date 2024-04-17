@@ -28,7 +28,7 @@ export default function Home() {
           title="Header"
           desc="Simple header"
           ui={<Header />}
-          // codeHTML={<CodeWrapper code={htmlHeader} />}
+          codeHTML={<CodeWrapper code={htmlHeader} />}
           codeReact={<CodeWrapper code={reactHeader} />}
           note={
             <p>
