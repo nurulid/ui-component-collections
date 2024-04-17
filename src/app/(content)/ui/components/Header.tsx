@@ -10,41 +10,41 @@ const menu = [
   { title: 'FAQ', url: '#' },
 ];
 
-export const htmlHeader = `<header className="py-10">
-<nav className="flex items-center justify-between">
-  <img src="/images/Logo.svg" height="34px" alt="Logo" />
-  <ul className="nav-menu uppercase text-sm flex items-center flex-wrap gap-5">
+export const htmlHeader = `<header class="py-5 px-10 shadow bg-white">
+<nav class="flex items-center justify-between">
+  <a href="/">
+    <img src="/images/Logo.svg" height="34px" alt="Logo" />
+  </a>
+
+  <ul class="uppercase text-sm flex items-center flex-wrap gap-5">
     <li>
-      <a href="#">Diets</a>
+      <a href="#" class="hover:underline transition-all text-gray-500">Diets</a>
     </li>
     <li>
-      <a href="#">Calorie calculator</a>
+      <a href="#" class="hover:underline transition-all text-gray-500">Menu</a>
     </li>
     <li>
-      <a href="#">Menu</a>
+      <a href="#" class="hover:underline transition-all text-gray-500">Delivery</a>
     </li>
     <li>
-      <a href="#">Delivery</a>
+      <a href="#" class="hover:underline transition-all text-gray-500">About Us</a>
     </li>
     <li>
-      <a href="#">About Us</a>
+      <a href="#" class="hover:underline transition-all text-gray-500">Blog</a>
     </li>
     <li>
-      <a href="#">Blog</a>
-    </li>
-    <li>
-      <a href="#">FAQ</a>
+      <a href="#" class="hover:underline transition-all text-gray-500">FAQ</a>
     </li>
   </ul>
 
-  <ul className="flex gap-5 items-center">
+  <ul class="flex gap-5 items-center">
     <li>
       <a href="#">
-        <img src="/icons/bag.svg" alt="" />
+        <img src="/icons/bag.svg" width="30px" alt="Bag icon" class="hover:scale-105 transition-all" />
       </a>
     </li>
     <li>
-      <a href="#" className="btn-link">
+      <a href="#" class="py-[10px] px-6 text-sm bg-black hover:scale-105 transition-all rounded-xl text-white inline-block">
         Sign in
       </a>
     </li>
@@ -75,9 +75,9 @@ export const Header = () => {
         <ul className="nav-menu uppercase text-sm flex items-center flex-wrap gap-5">
           {menu.map((item, i) => (
             <li key={i}>
-              <a href={item.url} className="hover:underline transition-all text-gray-500">
+              <Link href={item.url} className="hover:underline transition-all text-gray-500">
                 {item.title}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
@@ -108,24 +108,24 @@ export const Header = () => {
 export const Header = () => {
   return (
     <header className="py-5 px-10 shadow bg-white">
-      <nav className="nav-menu flex items-center justify-between">
+      <nav className="flex items-center justify-between">
         <Link href="/">
           <Image src="/fitme-logo.svg" height={50} width={100} alt="Logo" />
         </Link>
 
-        <ul className="nav-menu uppercase text-sm flex items-center flex-wrap gap-5">
+        <ul className="uppercase text-sm flex items-center flex-wrap gap-5">
           {menu.map((item, i) => (
             <li key={i}>
-              <a href={item.url} className="hover:underline transition-all text-gray-500">
+              <Link href={item.url} className="hover:underline transition-all text-gray-500">
                 {item.title}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
 
         <ul className="flex gap-5 items-center">
           <li>
-            <a href="#">
+            <Link href="#">
               <Image
                 src="/icons/bag.svg"
                 height={30}
@@ -133,12 +133,12 @@ export const Header = () => {
                 alt="Bag icon"
                 className='hover:scale-105 transition-all'
               />
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#" className="py-[10px] px-6 text-sm bg-black hover:scale-105 transition-all rounded-xl text-white inline-block">
+            <Link href="#" className="py-[10px] px-6 text-sm bg-black hover:scale-105 transition-all rounded-xl text-white inline-block">
               Sign in
-            </a>
+            </Link>
           </li>
         </ul>
       </nav>
