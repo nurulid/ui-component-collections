@@ -6,21 +6,21 @@ import SyntaxHighlighter from 'react-syntax-highlighter';
 import { nightOwl } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 interface Props {
-  htmlCode: string;
+  code: string;
 }
 
 export const CodeWrapper = (props: Props) => {
   const [copied, setCopied] = useState(false);
-  const { htmlCode } = props;
+  const { code } = props;
 
   const handleCopyClick = () => {
-    navigator.clipboard.writeText(htmlCode);
+    navigator.clipboard.writeText(code);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000); // Reset copied state after 2 seconds
   };
 
   return (
-    <div className='group relative'>
+    <div className='group relative w-full'>
       <button
         onClick={handleCopyClick}
         className="p-2 w-[90px] bg-white hover:opacity-80 transition-all rounded absolute right-2 top-2 text-xs opacity-10 group-hover:opacity-100 z-[3]"
@@ -47,9 +47,9 @@ export const CodeWrapper = (props: Props) => {
         language="javascript"
         wrapLines
         style={nightOwl}
-        className="overflow-auto max-h-[60vh] !py-4 !px-7 max-w-[300px] sm:max-w-[700px] w-full"
+        className="overflow-auto max-h-[60vh] !py-4 !px-7 w-full"
       >
-        {htmlCode}
+        {code}
       </SyntaxHighlighter>
     </div>
   );
