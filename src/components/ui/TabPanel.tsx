@@ -74,7 +74,7 @@ export const TabPanel: React.FC<Props> = (props) => {
           bgContainer ? bgContainer : 'bg-white',
         ].join(' ')}
       >
-        {ui}
+        <div className="w-full text-center mx-auto">{ui}</div>
       </Tabs.Content>
       <Tabs.Content
         value="tab2"
@@ -86,7 +86,7 @@ export const TabPanel: React.FC<Props> = (props) => {
           bgContainer ? bgContainer : 'bg-white',
         ].join(' ')}
       >
-        {codeHTML}
+        {codeHTML ? codeHTML : (<p className='p-4 z-[2] text-gray-500 text-base'>Comming Soon</p>)}
       </Tabs.Content>
       <Tabs.Content
         value="tab3"
@@ -98,7 +98,7 @@ export const TabPanel: React.FC<Props> = (props) => {
           bgContainer ? bgContainer : 'bg-white',
         ].join(' ')}
       >
-        {codeReact}
+        {codeReact ? codeReact : (<p className='p-4 z-[2] text-gray-500 text-base'>Comming Soon</p>)}
       </Tabs.Content>
     </Tabs.Root>
   );

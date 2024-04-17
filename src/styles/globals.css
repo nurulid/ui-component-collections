@@ -15,13 +15,12 @@
     font-family: var(--font-source-code) !important;
     @apply text-xs;
   }
-
-  a {
-    @apply underline underline-offset-2 hover:text-indie;
-  }
 }
 
 @layer components {
+  .note {
+    @apply underline underline-offset-2 hover:text-indie;
+  }
   .pattern-boxes {
     background-color: #fdfdfd;
     background-image: linear-gradient(#f6f6f6 1px, transparent 1px),
