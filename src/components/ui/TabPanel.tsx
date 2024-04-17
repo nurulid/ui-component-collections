@@ -36,10 +36,10 @@ export const TabPanel: React.FC<Props> = (props) => {
   const { title, desc, ui, codeHTML, codeReact, note, bgContainer } = props;
   return (
     <Tabs.Root defaultValue="tab1" className="bg-griey p-2 rounded-md border">
-      <div className="mb-2 pl-3 pt-2">
+      <div className="pb-4 pl-3 pt-2">
         <div className="flex justify-between items-end">
           <div>
-            <h2 className="text-xl font-[400] mb-1">{title}</h2>
+            <h2 className="text-xl font-[400] mb-1 font-mono">{title}</h2>
             <p className="text-gray-500 mb-2">{desc}</p>
             <div className="text-gray-400 text-xs">{note}</div>
           </div>
