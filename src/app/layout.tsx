@@ -26,7 +26,7 @@ export default function RootLayout({
       <body className={`${inter.className} ${sourceCodePro.variable}`}>
         <main className="flex relative">
           <Sidebar />
-          <section className="flex-grow min-h-screen w-[calc(100vw-280px)]">
+          <section className="flex-grow min-h-screen w-[calc(100vw-280px)] py-4 px-10">
             <div className="max-w-7xl w-full mx-auto">{children}</div>
           </section>
         </main>
