@@ -2,12 +2,12 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 const menu = [
-  { title: 'Diets', url: '#' },
-  { title: 'Menu', url: '#' },
-  { title: 'Delivery', url: '#' },
-  { title: 'About Us', url: '#' },
-  { title: 'Blog', url: '#' },
-  { title: 'FAQ', url: '#' },
+  { title: 'Diets', link: '#' },
+  { title: 'Menu', link: '#' },
+  { title: 'Delivery', link: '#' },
+  { title: 'About Us', link: '#' },
+  { title: 'Blog', link: '#' },
+  { title: 'FAQ', link: '#' },
 ];
 
 export const htmlHeader = 
@@ -53,32 +53,32 @@ export const htmlHeader =
   </nav>
 </header>`;
 
-export const reactHeader = `import Image from 'next/image';
-import Link from 'next/link';
-
-const menu = [
-  { title: 'Diets', url: '#' },
-  { title: 'Menu', url: '#' },
-  { title: 'Delivery', url: '#' },
-  { title: 'About Us', url: '#' },
-  { title: 'Blog', url: '#' },
-  { title: 'FAQ', url: '#' },
+export const reactHeader = `const menu = [
+  { title: 'Diets', link: '#' },
+  { title: 'Menu', link: '#' },
+  { title: 'Delivery', link: '#' },
+  { title: 'About Us', link: '#' },
+  { title: 'Blog', link: '#' },
+  { title: 'FAQ', link: '#' },
 ];
 
 export const Header = () => {
   return (
     <header className="py-5 px-10 shadow bg-white">
       <nav className="nav-menu flex items-center justify-between">
-        <Link href="/">
-          <Image src="/fitme-logo.svg" height={50} width={100} alt="Logo" />
-        </Link>
+        <a href="/">
+          <img src="/fitme-logo.svg" height="30px" alt="Logo" />
+        </a>
 
         <ul className="nav-menu uppercase text-sm flex items-center flex-wrap gap-5">
           {menu.map((item, i) => (
             <li key={i}>
-              <Link href={item.url} className="hover:underline transition-all text-gray-500">
+              <a
+                href={item.link}
+                className="hover:underline transition-all text-gray-500"
+              >
                 {item.title}
-              </Link>
+              </a>
             </li>
           ))}
         </ul>
@@ -86,17 +86,19 @@ export const Header = () => {
         <ul className="flex gap-5 items-center">
           <li>
             <a href="#">
-              <Image
+              <img
                 src="/icons/bag.svg"
-                height={30}
-                width={30}
+                height="30px"
                 alt="Bag icon"
-                className='hover:scale-105 transition-all'
+                className="hover:scale-105 transition-all"
               />
             </a>
           </li>
           <li>
-            <a href="#" className="py-[10px] px-6 text-sm bg-black hover:scale-105 transition-all rounded-xl text-white inline-block">
+            <a
+              href="#"
+              className="py-[10px] px-6 text-sm bg-black hover:scale-105 transition-all rounded-xl text-white inline-block"
+            >
               Sign in
             </a>
           </li>
@@ -104,7 +106,8 @@ export const Header = () => {
       </nav>
     </header>
   );
-};`
+};
+`
 
 export const Header = () => {
   return (
@@ -117,7 +120,7 @@ export const Header = () => {
         <ul className="uppercase text-sm flex items-center flex-wrap gap-5">
           {menu.map((item, i) => (
             <li key={i}>
-              <Link href={item.url} className="hover:underline transition-all text-gray-500">
+              <Link href={item.link} className="hover:underline transition-all text-gray-500">
                 {item.title}
               </Link>
             </li>

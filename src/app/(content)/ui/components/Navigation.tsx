@@ -122,104 +122,99 @@ const folderMenu = [
 
 export const Navigation = () => {
   return (
-    <>
-      <nav className="max-w-[300px] w-full bg-white">
-        <ul>
-          {folderMenu.map(
-            ({ icon: Icon, title, url, count, unread, active }) => {
-              return (
-                <li key={title}>
-                  <Link
-                    href={url}
-                    data-active={active}
+    <nav className="max-w-[300px] w-full bg-white">
+      <ul>
+        {folderMenu.map(({ icon: Icon, title, url, count, unread, active }) => {
+          return (
+            <li key={title}>
+              <a
+                href={url}
+                data-active={active}
+                className={[
+                  'group flex items-center gap-4 py-3 px-4',
+                  'data-[active=true]:bg-gray-100',
+                  'hover:bg-gray-100 transition-all',
+                ].join(' ')}
+              >
+                <Icon
+                  size={33}
+                  className={[
+                    'p-2 rounded',
+                    'bg-gray-100',
+                    'group-data-[active=true]:text-violet-400',
+                  ].join(' ')}
+                />
+                <h3 className="text-base">{title}</h3>
+                <div className="ml-auto text-xs">
+                  {unread ? (
+                    <span className="text-gray-500">+{unread}</span>
+                  ) : null}
+                  <span
                     className={[
-                      'group flex items-center gap-4 py-3 px-4',
-                      'data-[active=true]:bg-gray-100',
-                      'hover:bg-gray-100 transition-all',
+                      'inline-block ml-2 p-2 rounded-full',
+                      'bg-gray-100',
+                      'group-data-[active=true]:bg-violet-400 group-data-[active=true]:text-white',
                     ].join(' ')}
                   >
-                    <Icon
-                      size={33}
-                      className={[
-                        'p-2 rounded',
-                        'bg-gray-100',
-                        'group-data-[active=true]:text-violet-400',
-                      ].join(' ')}
-                    />
-                    <h3 className="text-base">{title}</h3>
-                    <div className="ml-auto text-xs">
-                      {unread ? (
-                        <span className="text-gray-500">+{unread}</span>
-                      ) : null}
-                      <span
-                        className={[
-                          'inline-block ml-2 p-2 rounded-full',
-                          'bg-gray-100',
-                          'group-data-[active=true]:bg-violet-400 group-data-[active=true]:text-white',
-                        ].join(' ')}
-                      >
-                        {count}
-                      </span>
-                    </div>
-                  </Link>
-                </li>
-              );
-            }
-          )}
-        </ul>
-      </nav>
-    </>
+                    {count}
+                  </span>
+                </div>
+              </a>
+            </li>
+          );
+        })}
+      </ul>
+    </nav>
   );
-};`;
+};
+`;
 
 export const Navigation = () => {
   return (
-    <>
-      <nav className="max-w-[300px] w-full bg-white">
-        <ul>
-          {folderMenu.map(
-            ({ icon: Icon, title, url, count, unread, active }) => {
-              return (
-                <li key={title}>
-                  <Link
-                    href={url}
-                    data-active={active}
+    <nav className="max-w-[300px] w-full bg-white">
+      <ul>
+        {folderMenu.map(
+          ({ icon: Icon, title, url, count, unread, active }) => {
+            return (
+              <li key={title}>
+                <Link
+                  href={url}
+                  data-active={active}
+                  className={[
+                    'group flex items-center gap-4 py-3 px-4',
+                    'data-[active=true]:bg-gray-100',
+                    'hover:bg-gray-100 transition-all',
+                  ].join(' ')}
+                >
+                  <Icon
+                    size={33}
                     className={[
-                      'group flex items-center gap-4 py-3 px-4',
-                      'data-[active=true]:bg-gray-100',
-                      'hover:bg-gray-100 transition-all',
+                      'p-2 rounded',
+                      'bg-gray-100',
+                      'group-data-[active=true]:text-violet-400',
                     ].join(' ')}
-                  >
-                    <Icon
-                      size={33}
+                  />
+                  <h3 className="text-base">{title}</h3>
+                  <div className="ml-auto text-xs">
+                    {unread ? (
+                      <span className="text-gray-500">+{unread}</span>
+                    ) : null}
+                    <span
                       className={[
-                        'p-2 rounded',
+                        'inline-block ml-2 p-2 rounded-full',
                         'bg-gray-100',
-                        'group-data-[active=true]:text-violet-400',
+                        'group-data-[active=true]:bg-violet-400 group-data-[active=true]:text-white',
                       ].join(' ')}
-                    />
-                    <h3 className="text-base">{title}</h3>
-                    <div className="ml-auto text-xs">
-                      {unread ? (
-                        <span className="text-gray-500">+{unread}</span>
-                      ) : null}
-                      <span
-                        className={[
-                          'inline-block ml-2 p-2 rounded-full',
-                          'bg-gray-100',
-                          'group-data-[active=true]:bg-violet-400 group-data-[active=true]:text-white',
-                        ].join(' ')}
-                      >
-                        {count}
-                      </span>
-                    </div>
-                  </Link>
-                </li>
-              );
-            }
-          )}
-        </ul>
-      </nav>
-    </>
+                    >
+                      {count}
+                    </span>
+                  </div>
+                </Link>
+              </li>
+            );
+          }
+        )}
+      </ul>
+    </nav>
   );
 };
