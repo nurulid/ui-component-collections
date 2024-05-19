@@ -111,9 +111,9 @@ export const Header = () => {
 
 export const Header = () => {
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-start lg:justify-center overflow-x-auto">
       {/* TODO: HEADER ON MOBILE VIEW*/}
-    <header className="py-5 px-10 shadow bg-white w-[1020px]">
+    <header className="py-5 px-10 shadow bg-white min-w-[1020px]">
       <nav className="flex items-center justify-between">
         <Link href="/">
           <Image src="/fitme-logo.svg" height={50} width={100} alt="Logo" />
