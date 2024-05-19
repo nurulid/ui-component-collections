@@ -13,7 +13,7 @@
 
   code {
     font-family: var(--font-source-code) !important;
-    @apply text-xs;
+    @apply text-sm;
   }
 }
 

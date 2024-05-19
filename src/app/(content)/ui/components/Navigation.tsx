@@ -90,34 +90,10 @@ export const htmlNav = `<nav class="max-w-[300px] w-full bg-white">
 export const reactNav = `import { Star, Mail, File, Send } from 'lucide-react';
 
 const folderMenu = [
-  {
-    icon: Mail,
-    title: 'Inbox',
-    count: '1293',
-    unread: '3',
-    active: true,
-  },
-  {
-    icon: Send,
-    title: 'Send',
-    count: '145',
-    unread: '',
-    active: false,
-  },
-  {
-    icon: Star,
-    title: 'Starred',
-    count: '67',
-    unread: '',
-    active: false,
-  },
-  {
-    icon: File,
-    title: 'Draft',
-    count: '5',
-    unread: '',
-    active: false,
-  },
+  { icon: Mail, title: 'Inbox', count: '1293', unread: '3', active: true, },
+  { icon: Send, title: 'Send', count: '145', unread: '', active: false, },
+  { icon: Star, title: 'Starred', count: '67', unread: '', active: false, },
+  { icon: File, title: 'Draft', count: '5', unread: '', active: false, },
 ];
 
 export const Navigation = () => {
@@ -171,6 +147,7 @@ export const Navigation = () => {
 
 export const Navigation = () => {
   return (
+    <div className='flex justify-center'>
     <nav className="max-w-[300px] w-full bg-white">
       <ul>
         {folderMenu.map(
@@ -216,5 +193,6 @@ export const Navigation = () => {
         )}
       </ul>
     </nav>
+    </div>
   );
 };

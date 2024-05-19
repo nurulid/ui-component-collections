@@ -87,7 +87,7 @@ export const TabPanel: React.FC<Props> = (props) => {
           bgContainer ? bgContainer : 'bg-white',
         ].join(' ')}
       >
-        <div className="w-full text-center mx-auto">{ui}</div>
+        <div className="w-full">{ui}</div>
       </Tabs.Content>
       {codeHTML && (
         <Tabs.Content
