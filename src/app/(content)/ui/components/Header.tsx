@@ -111,7 +111,9 @@ export const Header = () => {
 
 export const Header = () => {
   return (
-    <header className="py-5 px-10 shadow bg-white">
+    <div className="flex justify-center">
+      {/* TODO: HEADER ON MOBILE VIEW*/}
+    <header className="py-5 px-10 shadow bg-white w-[1020px]">
       <nav className="flex items-center justify-between">
         <Link href="/">
           <Image src="/fitme-logo.svg" height={50} width={100} alt="Logo" />
@@ -147,5 +149,6 @@ export const Header = () => {
         </ul>
       </nav>
     </header>
+    </div>
   );
 };
