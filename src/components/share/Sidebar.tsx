@@ -45,7 +45,7 @@ export const Sidebar = () => {
         <h2 className="mb-2 font-mono font-semibold border-b pb-2">
           Tailwind CSS UI Library
         </h2>
-        <p className='text-xs mb-10 text-gray-400'>Semantic, less "div".</p>
+        <p className='text-xs mb-10 text-gray-400'>Semantic, less &quot;div&quot;.</p>
         <ul className="space-y-1">
           {sidebarMenu.map(({ title, link, ready }, i) => (
             <li key={i}>
