@@ -1,12 +1,12 @@
 import { TabPanel } from '@/components/ui/TabPanel';
 import { Navigation, htmlNav, reactNav } from './(content)/ui/components/Navigation';
 import { CodeWrapper } from '@/components/ui/CodeWrapper';
-import { Sidebar, htmlSidebar } from './(content)/ui/components/Sidebar';
 import { Header, htmlHeader, reactHeader } from './(content)/ui/components/Header';
+import { TwitterProfile, reactCode, htmlCode } from './(content)/ui/components/TwitterProfile';
 
 export default function Home() {
   return (
-    <div className="space-y-10">
+    <div className="space-y-5">
       <TabPanel
         title="Dashboard navigation"
         desc="Folder menu in dashboard"
@@ -38,6 +38,13 @@ export default function Home() {
           </p>
         }
         bgContainer='bg-gray-50'
+      />
+      <TabPanel 
+        title="Twitter profile card"
+        desc=""
+        ui={<TwitterProfile />}
+        codeHTML={<CodeWrapper code={htmlCode} />}
+        codeReact={<CodeWrapper code={reactCode} />}
       />
     </div>
   );
