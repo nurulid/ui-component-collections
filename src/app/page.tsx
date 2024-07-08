@@ -3,6 +3,7 @@ import { Navigation, htmlNav, reactNav } from './(content)/ui/components/Navigat
 import { CodeWrapper } from '@/components/ui/CodeWrapper';
 import { Header, htmlHeader, reactHeader } from './(content)/ui/components/Header';
 import { TwitterProfile, reactProfile, htmlProfile } from './(content)/ui/components/TwitterProfile';
+import { Pricing, reactPricing, htmlPricing } from './(content)/ui/components/Pricing';
 
 export default function Home() {
   return (
@@ -45,6 +46,13 @@ export default function Home() {
         ui={<TwitterProfile />}
         codeHTML={<CodeWrapper code={htmlProfile} />}
         codeReact={<CodeWrapper code={reactProfile} />}
+      />
+      <TabPanel 
+        title="Pricing"
+        desc=""
+        ui={<Pricing />}
+        // codeHTML={<CodeWrapper code={htmlPricing} />}
+        codeReact={<CodeWrapper code={reactPricing} />}
       />
     </div>
   );
