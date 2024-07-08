@@ -1,4 +1,4 @@
-export const htmlCode = `<div class="transition-smooth bg-gray-950 hover:bg-zinc-900 hover:border-gray-900 text-white rounded-2xl relative max-w-[350px] w-full">
+export const htmlProfile = `<div class="transition-smooth bg-gray-950 hover:bg-zinc-900 hover:border-gray-900 text-white rounded-2xl relative max-w-[350px] w-full">
   <div class="flex items-center gap-2 p-4">
     <img class="w-8 invert" src="public/x-twitter.svg" alt="Twitter icon" />
     <span>Profile</span>
@@ -21,7 +21,7 @@ export const htmlCode = `<div class="transition-smooth bg-gray-950 hover:bg-zinc
   </div>
 </div>`
 
-export const reactCode = `const user = {
+export const reactProfile = `const user = {
   name: 'Nurul ID 🪴',
   username: 'nurulide',
   avatar: '/images/me-ai.png',

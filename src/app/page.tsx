@@ -2,7 +2,7 @@ import { TabPanel } from '@/components/ui/TabPanel';
 import { Navigation, htmlNav, reactNav } from './(content)/ui/components/Navigation';
 import { CodeWrapper } from '@/components/ui/CodeWrapper';
 import { Header, htmlHeader, reactHeader } from './(content)/ui/components/Header';
-import { TwitterProfile, reactCode, htmlCode } from './(content)/ui/components/TwitterProfile';
+import { TwitterProfile, reactProfile, htmlProfile } from './(content)/ui/components/TwitterProfile';
 
 export default function Home() {
   return (
@@ -43,8 +43,8 @@ export default function Home() {
         title="Twitter profile card"
         desc=""
         ui={<TwitterProfile />}
-        codeHTML={<CodeWrapper code={htmlCode} />}
-        codeReact={<CodeWrapper code={reactCode} />}
+        codeHTML={<CodeWrapper code={htmlProfile} />}
+        codeReact={<CodeWrapper code={reactProfile} />}
       />
     </div>
   );
