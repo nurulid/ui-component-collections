@@ -1,9 +1,4 @@
 import React from 'react'
-import Link from 'next/link'
-import { Pricing } from '../(content)/ui/components/Pricing'
-import { Button } from '../(content)/ui/components/Button'
-// import { Input } from '../(content)/ui/components/Input.tsx'
-import { Eye } from 'lucide-react'
 import Accordion from '../(content)/ui/components/Accordion'
 
 export default function Page() {
