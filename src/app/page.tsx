@@ -41,15 +41,14 @@ export default function Home() {
         bgContainer='bg-gray-50'
       />
       <TabPanel 
-        title="Twitter profile card"
-        desc=""
+        title="Twitter/X profile card/widget"
         ui={<TwitterProfile />}
         codeHTML={<CodeWrapper code={htmlProfile} />}
         codeReact={<CodeWrapper code={reactProfile} />}
       />
       <TabPanel 
         title="Pricing"
-        desc=""
+        note="Design source: Loom"
         ui={<Pricing />}
         // codeHTML={<CodeWrapper code={htmlPricing} />}
         codeReact={<CodeWrapper code={reactPricing} />}

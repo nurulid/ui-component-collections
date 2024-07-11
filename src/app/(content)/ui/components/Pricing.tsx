@@ -31,7 +31,7 @@ export const Pricing = () => {
       <div className='p-10 border-2 border-[var(--primary)] rounded-3xl shadow-xl'>
         <div className='text-center space-y-5 px-8'>
           <Chrome size={60} color='var(--primary-light)' className='mx-auto'/>
-          <h3 className='text-2xl font-semibold'>Unwant commit</h3>
+          <h3 className='text-2xl font-semibold'>Chrome extension</h3>
           <p className='text-gray-500'>Get start first with quick intallation.</p>
           <a href='#' className='py-[10px] px-4 rounded-full bg-[var(--primary)] text-white block font-semibold border hover:scale-105 transition-all'>Install</a>
         </div>
@@ -94,7 +94,7 @@ export const Pricing = () => {
       <div className='p-10 border-2 border-[var(--primary)] rounded-3xl shadow-xl'>
         <div className='text-center space-y-5 px-8'>
           <Chrome size={60} color='var(--primary-light)' className='mx-auto'/>
-          <h3 className='text-2xl font-semibold'>Unwant commit</h3>
+          <h3 className='text-2xl font-semibold'>Chrome extension</h3>
           <p className='text-gray-500'>Get start first with quick intallation.</p>
           <a href='#' className='py-[10px] px-4 rounded-full bg-[var(--primary)] text-white block font-semibold border hover:scale-105 transition-all'>Install</a>
         </div>
