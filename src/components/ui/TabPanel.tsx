@@ -6,11 +6,11 @@ import { Atom, Code, Eye } from 'lucide-react';
 
 type Props = {
   title: string;
-  desc: string;
+  desc?: string;
   ui: JSX.Element; // JSX.Element for component
   codeHTML?: JSX.Element;
   codeReact?: JSX.Element;
-  note?: React.ReactNode; //React.ReactNode for html element
+  note?: React.ReactNode | string; //React.ReactNode for html element
   bgContainer?: string;
 };
 
@@ -43,8 +43,8 @@ export const TabPanel: React.FC<Props> = (props) => {
         <div className="flex justify-between items-end gap-2 flex-wrap">
           <div>
             <h2 className="text-xl font-[400] font-mono">{title}</h2>
-            {desc && <p className="text-gray-500 mt-1 mb-2">{desc}</p>}
-            {note && <div className="text-gray-400 text-xs">{note}</div>}
+            {desc && <p className="text-gray-500 mt-1">{desc}</p>}
+            {note && <div className="text-gray-400 text-xs mt-2">{note}</div>}
           </div>
           <Tabs.List className="text-xs space-x-1 ml-auto">
             {tabMenu.map((item, i) => {

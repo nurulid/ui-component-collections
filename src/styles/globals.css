@@ -18,6 +18,10 @@
 }
 
 @layer components {
+  .center-component {
+    @apply h-[96vh] w-full flex justify-center items-center bg-black;
+  }
+
   .note {
     @apply underline underline-offset-2 hover:text-indie;
   }
