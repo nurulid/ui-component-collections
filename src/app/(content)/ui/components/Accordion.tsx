@@ -69,8 +69,8 @@ function Panel(props: PropsWithChildren<PanelProps>) {
           {Icon && (
             <motion.span
               initial={{ scale: 0 }}
-              animate={{ scale: isActive ? 1.2 : .7 }}
-              transition={{ duration: 0.3 }}
+              animate={{ scale: isActive ? 1.3 : .7 }}
+              transition={{ duration: 0.4 }}
             >
               <Icon />
             </motion.span>
@@ -86,18 +86,17 @@ function Panel(props: PropsWithChildren<PanelProps>) {
         {isActive ? (
           <motion.p
             variants={{
-              hidden: { opacity: 0, height: 0, y: 30 },
+              hidden: { opacity: 0, height: 0, y: -50 },
               visible: { opacity: 1, height: 'auto', y: 0 },
             }}
             initial="hidden"
             animate="visible"
             transition={{
               type: 'spring',
-              bounce: !isActive ? 0 : 0.4,
-              duration: 0.4,
+              bounce: !isActive ? 0 : 0.5,
+              duration: 0.8,
             }}
-            exit="hidden"
-            className="text-slate-500"
+            className={`text-slate-500`}
           >
             {children}
           </motion.p>
