@@ -28,8 +28,6 @@ export const reactProfile = `const user = {
   cover: '/images/watermelon-palestine.jpeg', // watermelon image source: https://www.instagram.com/p/Cy6g8d4vUuf/
   description: 'Just an ordinary person.',
   url: 'https://twitter.com/nurulide',
-  following: 301,
-  followers: 300,
 };
 
 export const TwitterProfile = () => {
@@ -80,8 +78,6 @@ const user = {
   cover: '/images/watermelon-palestine.jpeg', // watermelon image source: https://www.instagram.com/p/Cy6g8d4vUuf/
   description: 'Just an ordinary person.',
   url: 'https://twitter.com/nurulide',
-  following: 301,
-  followers: 300,
 };
 
 export const TwitterProfile = () => {

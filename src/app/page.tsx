@@ -9,8 +9,8 @@ export default function Home() {
   return (
     <div className="space-y-5">
       <TabPanel
-        title="Dashboard navigation"
-        desc="Folder menu in dashboard"
+        title="Navigation"
+        desc="Folder menu in dashboard navigation"
         ui={<Navigation />}
         codeHTML={<CodeWrapper code={htmlNav} />}
         codeReact={<CodeWrapper code={reactNav} />}
