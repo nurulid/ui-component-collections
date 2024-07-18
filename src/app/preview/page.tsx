@@ -1,10 +1,13 @@
 import React from 'react'
 import Accordion from '../(content)/ui/components/Accordion'
+import Dock from '../(content)/framer-motion/Dock'
+import { Pricing } from '../(content)/ui/components/Pricing'
 
 export default function Page() {
   return (
-    <div className='center-component'>
-      <Accordion />
+    <div className='center-component bg-white'>
+      <Dock />
+      {/* <Accordion /> */}
       {/* <Pricing /> */}
       <div className='h-8'/>
       

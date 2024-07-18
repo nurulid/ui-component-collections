@@ -13,7 +13,16 @@ const config: Config = {
         cool: "#fdfbf8",
         // sand: "#f1e6e0",
         griey: "#F6F6F6",
-        indie: "#962D8F"
+        indie: "#962D8F",
+        primary: {
+          DEFAULT: "#343BFE",
+          hover: "#2F35E5",
+          disable: "#E7E7E8",
+        },
+        secondary: {
+          DEFAULT: "#FFFFFF",
+          hover: "#E7EAF1",
+        },
       }
     },
   },
