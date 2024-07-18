@@ -1,4 +1,4 @@
-import { ComponentProps } from "react";
+import { ComponentProps, PropsWithChildren } from "react";
 import { twMerge } from "tailwind-merge";
 
 const variants = {
@@ -22,14 +22,14 @@ interface ButtonProps extends ComponentProps<"button"> {
 const buttonClassesBase: string[] = ["p-5 rounded-full"];
 const additional: string[] = ["p-[--padding]"];
 
-export const Buttonn = (props: ButtonProps) => {
-  const { className = "", variant = "primary", size = "sm", padding = "", ...buttonProps } = props;
+export const Buttonn = (props: PropsWithChildren<ButtonProps>) => {
+  const { className = "", variant = "primary", size = "sm", padding = "", children, ...buttonProps } = props;
   const style: React.CSSProperties = padding ? { '--padding': padding } as React.CSSProperties : {};
   return (
     <button
       style={style}
       className={twMerge(buttonClassesBase, className, variants[variant], sizes[size], padding ? additional : "")}
       {...buttonProps}
-    >dddd</button>
+    >{children}</button>
   );
 };
