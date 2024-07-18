@@ -47,7 +47,7 @@ export default function Home() {
         codeReact={<CodeWrapper code={reactProfile} />}
       />
       <TabPanel 
-        title="Pricing"
+        title="Comparison Card"
         note="Design source: Loom"
         ui={<Pricing />}
         // codeHTML={<CodeWrapper code={htmlPricing} />}
