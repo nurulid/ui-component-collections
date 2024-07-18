@@ -6,6 +6,7 @@ const config: Config = {
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    './mdx-components.tsx',
   ],
   theme: {
     extend: {
@@ -29,6 +30,8 @@ const config: Config = {
   plugins: [
     plugin(function({ addVariant }) {
         addVariant('current', '&.active');
-    })],
+    }),
+    require("@tailwindcss/typography")
+  ],
 };
 export default config;
