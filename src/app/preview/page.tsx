@@ -1,16 +1,32 @@
-import React from 'react'
-import Accordion from '../(content)/ui/components/Accordion'
-import Dock from '../(content)/framer-motion/Dock'
-import { Pricing } from '../(content)/ui/components/Pricing'
+"use client"
+
+import React from 'react';
+import Accordion from '../(content)/ui/components/Accordion';
+import Dock from '../(content)/framer-motion/Dock';
+import { Pricing } from '../(content)/ui/components/Pricing';
+import { motion } from 'framer-motion';
+import { Images } from '../(content)/ui/components/Images';
 
 export default function Page() {
   return (
-    <div className='center-component bg-white'>
-      <Dock />
+    <div className="center-component bg-white">
+      {/* <Dock /> */}
+      <motion.div
+        className="w-full h-full flex justify-between items-center"
+        variants={{
+          hidden: { opacity: 0, x: -150, scale: 0.2 },
+          visible: { opacity: 1, x: 0, scale: 1 },
+        }}
+        initial="hidden"
+        animate="visible"
+        exit="hidden"
+      >
+        <Images />
+      </motion.div>
       {/* <Accordion /> */}
       {/* <Pricing /> */}
-      <div className='h-8'/>
-      
+      <div className="h-8" />
+
       {/* <form>
         <div className='space-y-6'>
           <Input id='email' title='Email' type='email' placeholder='Enter your email'/>
@@ -25,5 +41,5 @@ export default function Page() {
         <p className='text-center text-sm mt-6'><span className='opacity-50'>Already have an account?</span> <Link href="/login" className='text-primary font-semibold'>Login</Link></p>
       </form> */}
     </div>
-  )
+  );
 }
