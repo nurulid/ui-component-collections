@@ -3,6 +3,7 @@
 import React, { PropsWithChildren } from 'react';
 import * as Tabs from '@radix-ui/react-tabs';
 import { Atom, Code, Eye } from 'lucide-react';
+import { convertToSlug } from '@/lib/utils';
 
 type Props = {
   title: string;
@@ -34,9 +35,12 @@ const tabMenu = [
 
 export const TabPanel: React.FC<Props> = (props) => {
   const { title, desc, ui, codeHTML, codeReact, note, bgContainer } = props;
+
+  const idPanel = convertToSlug(title);
   return (
     <Tabs.Root
       defaultValue="preview"
+      id={idPanel}
       className="bg-griey p-2 rounded-md border"
     >
       <div className="pb-4 pl-3 pt-2">
@@ -54,21 +58,23 @@ export const TabPanel: React.FC<Props> = (props) => {
                 (item.tab === 'react' && codeReact)
               ) {
                 return (
-                  <Tabs.Trigger
-                    key={i}
-                    value={item.tab}
-                    className={[
-                      'group text-gray-500 rounded-md py-1 px-2',
-                      'data-[state=active]:text-black data-[state=active]:bg-indie/10',
-                      'hover:text-black hover:bg-gray-300/10 transition-all',
-                    ].join(' ')}
-                  >
-                    <item.icon
-                      size={16}
-                      className="group-data-[state=active]:text-indie inline-block mr-1 -translate-y-[1px]"
-                    />
-                    {item.title}
-                  </Tabs.Trigger>
+                  <a href={`#${idPanel}`}>
+                    <Tabs.Trigger
+                      key={i}
+                      value={item.tab}
+                      className={[
+                        'group text-gray-500 rounded-md py-1 px-2',
+                        'data-[state=active]:text-black data-[state=active]:bg-indie/10',
+                        'hover:text-black hover:bg-gray-300/10 transition-all',
+                      ].join(' ')}
+                    >
+                      <item.icon
+                        size={16}
+                        className="group-data-[state=active]:text-indie inline-block mr-1 -translate-y-[1px]"
+                      />
+                      {item.title}
+                    </Tabs.Trigger>
+                  </a>
                 );
               } else {
                 return null;
