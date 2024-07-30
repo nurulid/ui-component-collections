@@ -58,9 +58,8 @@ export const TabPanel: React.FC<Props> = (props) => {
                 (item.tab === 'react' && codeReact)
               ) {
                 return (
-                  <a href={`#${idPanel}`}>
+                  <a href={`#${idPanel}`} key={i}>
                     <Tabs.Trigger
-                      key={i}
                       value={item.tab}
                       className={[
                         'group text-gray-500 rounded-md py-1 px-2',
