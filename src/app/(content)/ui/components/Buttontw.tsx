@@ -1,43 +1,35 @@
+import { ComponentProps, PropsWithChildren } from "react";
 import { twMerge } from "tailwind-merge";
-import { tv, type VariantProps } from "tailwind-variants";
 
-const style = tv({
-  base: "inline-block rounded-lg border font-semibold shadow-sm shadow-slate-200 transition duration-200 disabled:opacity-50",
-  variants: {
-    variant: {
-      primary:
-        "border-indigo-600 bg-indigo-600 text-indigo-50 hover:bg-indigo-500 active:bg-indigo-700",
-      secondary:
-        "border-slate-300 bg-white text-slate-600 hover:text-slate-700 active:bg-slate-50 active:text-slate-800",
-      danger:
-        "bg-rose-500 active:bg-rose-700 border-rose-500 hover:bg-rose-600 active:text-rose-50",
-    },
-    size: {
-      sm: "px-3 py-2 text-sm",
-      md: "px-4 py-3 text-[15px]",
-      lg: "text-lg px-5 py-3",
-    },
-  },
-  defaultVariants: {
-    variant: "primary",
-    size: "md",
-  },
-});
+const variants = {
+  primary: "bg-blue-500 hover:bg-blue-600",
+  secondary: "bg-gray-500 hover:bg-gray-600",
+  danger: "bg-red-500 hover:bg-red-600",
+  info: "bg-green-500 hover:bg-green-600",
+};
+const sizes = {
+  sm: "text-sm px-3 py-2",
+  md: "text-base px-4 py-3",
+  lg: "text-lg px-5 py-4",
+};
 
-type TButton = VariantProps<typeof style>;
-interface Props extends TButton, React.ComponentPropsWithRef<"button"> {
-  isFull?: boolean;
+interface ButtonProps extends ComponentProps<"button"> {
+  variant?: keyof typeof variants;
+  size?: keyof typeof sizes;
+  padding?: string;
 }
 
-export const Buttontw = (props: Props) => {
-  const { isFull = false } = props;
-  const fullBtn = isFull ? "w-full" : "w-auto";
+const buttonClassesBase: string[] = ["p-5 rounded-full"];
+const additional: string[] = ["p-[--padding]"];
+
+export const Buttontw = (props: PropsWithChildren<ButtonProps>) => {
+  const { className = "", variant = "primary", size = "sm", padding = "", children, ...buttonProps } = props;
+  const style: React.CSSProperties = padding ? { '--padding': padding } as React.CSSProperties : {};
   return (
     <button
-      {...props}
-      className={twMerge(style({ ...props }), fullBtn, props.className)}
-    >
-      {props.children}
-    </button>
+      style={style}
+      className={twMerge(buttonClassesBase, className, variants[variant], sizes[size], padding ? additional : "")}
+      {...buttonProps}
+    >{children}</button>
   );
 };
