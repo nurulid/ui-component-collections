@@ -7,6 +7,7 @@ import { Pricing } from '../(content)/ui/components/Pricing';
 import { motion } from 'framer-motion';
 import { Images } from '../(content)/ui/components/Images';
 import { DockHover } from '../(content)/ui/components/DockHover';
+import { LineChartex } from '../(content)/ui/components/LineChartex';
 
 export default function Page() {
   return (
@@ -26,7 +27,8 @@ export default function Page() {
       </motion.div> */}
       {/* <Accordion /> */}
       {/* <Pricing /> */}
-      <DockHover />
+      {/* <DockHover /> */}
+      <LineChartex />
       <div className="h-8" />
 
       {/* <form>
