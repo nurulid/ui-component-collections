@@ -21,6 +21,7 @@
     "react-dom": "^18",
     "react-syntax-highlighter": "^15.5.0",
     "react-use-measure": "^2.1.1",
+    "recharts": "^2.12.7",
     "tailwind-merge": "^2.4.0",
     "tailwind-variants": "^0.2.1"
   },

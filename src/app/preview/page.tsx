@@ -2,16 +2,18 @@
 
 import React from 'react';
 import Accordion from '../(content)/ui/components/Accordion';
-import Dock from '../(content)/framer-motion/Dock';
+// import Dock from '../(content)/framer-motion/Dock';
 import { Pricing } from '../(content)/ui/components/Pricing';
 import { motion } from 'framer-motion';
 import { Images } from '../(content)/ui/components/Images';
+import { DockHover } from '../(content)/ui/components/DockHover';
+import { LineChartex } from '../(content)/ui/components/LineChartex';
 
 export default function Page() {
   return (
     <div className="center-component bg-white">
       {/* <Dock /> */}
-      <motion.div
+      {/* <motion.div
         className="w-full h-full flex justify-between items-center"
         variants={{
           hidden: { opacity: 0, x: -150, scale: 0.2 },
@@ -22,9 +24,11 @@ export default function Page() {
         exit="hidden"
       >
         <Images />
-      </motion.div>
+      </motion.div> */}
       {/* <Accordion /> */}
       {/* <Pricing /> */}
+      {/* <DockHover /> */}
+      <LineChartex />
       <div className="h-8" />
 
       {/* <form>
