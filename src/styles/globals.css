@@ -18,17 +18,17 @@
 }
 
 @layer components {
-  .up {
+  /* .up {
     @apply -translate-y-4 scale-125 text-white fill-white;
-  }
+  } */
   .up::after {
     content: "";
     @apply size-[5px] rounded-full block bg-black absolute -bottom-2 left-1/2 -translate-x-1/2;
   }
-  .up::before {
+  /* .title {
     content: attr(data-title);
     @apply block px-2 absolute left-1/2 -translate-x-1/2 -top-8 bg-black rounded-md text-[10px] shadow-md whitespace-nowrap;
-  }
+  } */
 
   .center-component {
     @apply h-[96vh] w-full flex justify-center items-center bg-black;
