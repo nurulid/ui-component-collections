@@ -1,12 +1,12 @@
 "use client"
 
 import React from 'react';
-import Accordion from '../(content)/ui/components/Accordion';
+import Accordion from '../(content)/framer-motion/Accordion';
 // import Dock from '../(content)/framer-motion/Dock';
-import { Pricing } from '../(content)/ui/components/Pricing';
+import { Pricing } from '../(content)/framer-motion/Pricing';
 import { motion } from 'framer-motion';
 import { Images } from '../(content)/ui/components/Images';
-import { DockHover } from '../(content)/ui/components/DockHover';
+import { DockHover } from '../(content)/framer-motion/DockHover';
 import { LineChartex } from '../(content)/ui/components/LineChartex';
 
 export default function Page() {
@@ -27,8 +27,8 @@ export default function Page() {
       </motion.div> */}
       {/* <Accordion /> */}
       {/* <Pricing /> */}
-      {/* <DockHover /> */}
-      <LineChartex />
+      <DockHover />
+      {/* <LineChartex /> */}
       <div className="h-8" />
 
       {/* <form>

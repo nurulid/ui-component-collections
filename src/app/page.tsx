@@ -3,7 +3,7 @@ import { Navigation, htmlNav, reactNav } from './(content)/ui/components/Navigat
 import { CodeWrapper } from '@/components/ui/CodeWrapper';
 import { Header, htmlHeader, reactHeader } from './(content)/ui/components/Header';
 import { TwitterProfile, reactProfile, htmlProfile } from './(content)/ui/components/TwitterProfile';
-import { Pricing, reactPricing, htmlPricing } from './(content)/ui/components/Pricing';
+import { Pricing, reactPricing, htmlPricing } from './(content)/framer-motion/Pricing';
 
 export default function Home() {
   return (

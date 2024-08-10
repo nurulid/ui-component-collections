@@ -90,7 +90,7 @@ const features = {
 
 export const Pricing = () => {
   return (
-    <motion.div
+    <div
       style={{ '--primary': '#625DF5', '--primary-light': '#C7C6F9' } as any}
       className="grid grid-cols-2 gap-6 max-w-4xl mx-auto"
     >
@@ -143,6 +143,7 @@ export const Pricing = () => {
           ))}
         </motion.ul>
       </motion.div>
+      
       <motion.div className="p-10 border-2 border-[var(--primary)] rounded-3xl shadow-xl"
       variants={{
         hidden: { opacity: 0, y: 100 },
@@ -189,6 +190,6 @@ export const Pricing = () => {
           ))}
         </motion.ul>
       </motion.div>
-    </motion.div>
+    </div>
   );
 };
