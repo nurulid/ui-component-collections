@@ -22,7 +22,7 @@ export const SelectedMenu = ({
         className="min-w-[270px] px-0"
       >
         <div className="flex flex-col gap-4">
-          <div className="h-[39dvh] overflow-auto space-y-4">
+          <div className="h-[35dvh] overflow-auto space-y-4">
             <div>
               <h3 className="font-semibold">Foods</h3>
               {selectedFoods.length > 0 ? (
