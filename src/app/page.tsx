@@ -1,9 +1,9 @@
-import { TabPanel } from '@/components/ui/TabPanel';
-import { Navigation, htmlNav, reactNav } from './(content)/ui/components/Navigation';
-import { CodeWrapper } from '@/components/ui/CodeWrapper';
-import { Header, htmlHeader, reactHeader } from './(content)/ui/components/Header';
-import { TwitterProfile, reactProfile, htmlProfile } from './(content)/ui/components/TwitterProfile';
-import { Pricing, reactPricing, htmlPricing } from './(content)/framer-motion/Pricing';
+import { TabPanel } from '@/components/shared/TabPanel';
+import { Navigation, htmlNav, reactNav } from '../components/ui/Navigation';
+import { CodeWrapper } from '@/components/shared/CodeWrapper';
+import { Header, htmlHeader, reactHeader } from '../components/ui/Header';
+import { TwitterProfile, reactProfile, htmlProfile } from '../components/ui/TwitterProfile';
+import { Pricing, reactPricing, htmlPricing } from '../components/motion/Pricing';
 
 export default function Home() {
   return (

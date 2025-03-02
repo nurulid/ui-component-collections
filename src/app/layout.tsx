@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter, Source_Code_Pro, Inconsolata, Teko } from 'next/font/google';
 import '../styles/globals.css';
-import { Sidebar } from '@/components/share/Sidebar';
+import { Sidebar } from '@/components/shared/Sidebar';
 
 const inter = Inter({ subsets: ['latin'] });
 

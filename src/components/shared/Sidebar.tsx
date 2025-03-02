@@ -2,7 +2,7 @@
 
 import { PropsWithChildren } from 'react';
 import Link from 'next/link';
-import { Badge } from '../ui/Badge';
+import { Badge } from './Badge';
 import { usePathname } from 'next/navigation';
 
 const sidebarMenu = [

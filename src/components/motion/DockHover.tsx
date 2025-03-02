@@ -63,7 +63,7 @@ const Menu = (props: MenuProps) => {
 
 export const DockHover = () => {
   return (
-    <nav className="flex items-center gap-3 py-2 pb-1 px-2 border bg-[#181A1C] rounded-full shadow-lg border-white/5">
+    <nav className="inline-flex items-center gap-3 py-2 pb-1 px-2 border bg-[#181A1C] rounded-full shadow-lg border-white/5 w-auto">
       <Menu href="/" title="Home">
         <Home />
       </Menu>
