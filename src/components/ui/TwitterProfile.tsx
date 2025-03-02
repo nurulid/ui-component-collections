@@ -21,16 +21,16 @@ export const htmlProfile = `<div class="transition-smooth bg-gray-950 hover:bg-z
   </div>
 </div>`
 
-export const reactProfile = `const user = {
-  name: 'Nurul ID 🪴',
-  username: 'nurulide',
-  avatar: '/images/me-ai.png',
-  cover: '/images/watermelon-palestine.jpeg', // watermelon image source: https://www.instagram.com/p/Cy6g8d4vUuf/
-  description: 'Just an ordinary person.',
-  url: 'https://twitter.com/nurulide',
-};
+export const reactProfile = `export const TwitterProfile = () => {
+  const USER = {
+    name: 'Nurul ID 🪴',
+    username: 'nurulide',
+    avatar: '/images/me-ai.png',
+    cover: '/images/watermelon-palestine.jpeg', // watermelon image source: https://www.instagram.com/p/Cy6g8d4vUuf/
+    description: 'Just an ordinary person.',
+    url: 'https://twitter.com/nurulide',
+  };
 
-export const TwitterProfile = () => {
   return (
     <div className="transition-smooth bg-gray-950 hover:bg-zinc-900 hover:border-gray-900 text-white rounded-2xl relative max-w-[350px] w-full">
       <div className="flex items-center gap-2 p-4">
@@ -48,14 +48,14 @@ export const TwitterProfile = () => {
         <div className="absolute -bottom-11">
           <img
             className="w-[85px] rounded-full border-zinc-900 hover:border-zinc-950 border-4"
-            src={user.avatar}
+            src={USER.avatar}
             alt="Profile image"
           />
         </div>
       </div>
       <div className="text-right px-3 pt-4 pb-2">
         <a
-          href={user.url}
+          href={USER.url}
           target="_blank"
           className="py-2 px-6 border-zinc-500 bg-transparent hover:bg-white hover:text-black border rounded-full transition-all duration-200 ease-linear"
         >
@@ -63,24 +63,24 @@ export const TwitterProfile = () => {
         </a>
       </div>
       <div className="p-4">
-        <h2 className="text-xl">{user.name}</h2>
-        <p className="text-zinc-400">@{user.username}</p>
-        <p className="text-zinc-600">{user.description}</p>
+        <h2 className="text-xl">{USER.name}</h2>
+        <p className="text-zinc-400">@{USER.username}</p>
+        <p className="text-zinc-600">{USER.description}</p>
       </div>
     </div>
   );
 };`
 
-const user = {
-  name: 'Nurul ID 🪴',
-  username: 'nurulide',
-  avatar: '/images/me-ai.png',
-  cover: '/images/watermelon-palestine.jpeg', // watermelon image source: https://www.instagram.com/p/Cy6g8d4vUuf/
-  description: 'Just an ordinary person.',
-  url: 'https://twitter.com/nurulide',
-};
-
 export const TwitterProfile = () => {
+  const USER = {
+    name: 'Nurul ID 🪴',
+    username: 'nurulide',
+    avatar: '/images/me-ai.png',
+    cover: '/images/watermelon-palestine.jpeg', // watermelon image source: https://www.instagram.com/p/Cy6g8d4vUuf/
+    description: 'Just an ordinary person.',
+    url: 'https://twitter.com/nurulide',
+  };
+
   return (
     <div className="flex justify-center">
       <div className="transition-smooth bg-gray-950 hover:bg-zinc-900 hover:border-gray-900 text-white rounded-2xl relative max-w-[350px] w-full">
@@ -93,20 +93,20 @@ export const TwitterProfile = () => {
           <span>Profile</span>
         </div>
         <div
-          style={{ backgroundImage: "url("+ user.cover +")" }}
+          style={{ backgroundImage: "url("+ USER.cover +")" }}
           className="bg-cover bg-no-repeat h-40 lg:h-32 relative px-3"
         >
           <div className="absolute -bottom-11">
             <img
               className="w-[85px] rounded-full border-zinc-900 hover:border-zinc-950 border-4"
-              src={user.avatar}
+              src={USER.avatar}
               alt="Profile image"
             />
           </div>
         </div>
         <div className="text-right px-3 pt-4 pb-2">
           <a
-            href={user.url}
+            href={USER.url}
             target="_blank"
             className="py-2 px-6 border-zinc-500 bg-transparent hover:bg-white hover:text-black border rounded-full transition-all duration-200 ease-linear"
           >
@@ -114,9 +114,9 @@ export const TwitterProfile = () => {
           </a>
         </div>
         <div className="p-4">
-          <h2 className="text-xl">{user.name}</h2>
-          <p className="text-zinc-400">@{user.username}</p>
-          <p className="text-zinc-600">{user.description}</p>
+          <h2 className="text-xl">{USER.name}</h2>
+          <p className="text-zinc-400">@{USER.username}</p>
+          <p className="text-zinc-600">{USER.description}</p>
         </div>
       </div>
     </div>

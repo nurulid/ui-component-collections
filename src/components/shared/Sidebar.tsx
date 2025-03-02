@@ -15,6 +15,11 @@ const sidebarMenu = [
     // ]
   },
   {
+    title: 'Motion UI',
+    link: '/motion',
+    ready: true,
+  },
+  {
     title: 'Prototype',
     link: '/prototype/ksier',
     ready: true,

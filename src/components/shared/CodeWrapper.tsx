@@ -45,6 +45,7 @@ export const CodeWrapper = (props: Props) => {
       </button>
       <SyntaxHighlighter
         language="javascript"
+        showLineNumbers
         wrapLines
         style={nightOwl}
         className="overflow-auto max-h-[60vh] !py-4 !px-7 w-full"

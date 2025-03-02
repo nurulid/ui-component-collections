@@ -7,7 +7,7 @@ import { Pricing, reactPricing, htmlPricing } from '../components/motion/Pricing
 
 export default function Home() {
   return (
-    <div className="space-y-5">
+    <div className="space-y-8">
       <TabPanel
         title="Navigation"
         desc="Folder menu in dashboard navigation"
@@ -45,13 +45,6 @@ export default function Home() {
         ui={<TwitterProfile />}
         codeHTML={<CodeWrapper code={htmlProfile} />}
         codeReact={<CodeWrapper code={reactProfile} />}
-      />
-      <TabPanel 
-        title="Comparison Card"
-        note="Design source: Loom"
-        ui={<Pricing />}
-        // codeHTML={<CodeWrapper code={htmlPricing} />}
-        codeReact={<CodeWrapper code={reactPricing} />}
       />
     </div>
   );
