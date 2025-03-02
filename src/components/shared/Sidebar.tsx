@@ -7,17 +7,17 @@ import { usePathname } from 'next/navigation';
 
 const sidebarMenu = [
   {
-    title: 'UI Components',
+    title: 'Motion UI',
     link: '/',
+    ready: true,
+  },
+  {
+    title: 'UI Components',
+    link: '/ui',
     ready: true,
     // submenus: [
     //   { title: 'Navigation', link: '/ui', ready: true, },
     // ]
-  },
-  {
-    title: 'Motion UI',
-    link: '/motion',
-    ready: true,
   },
   {
     title: 'Prototype',

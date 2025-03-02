@@ -1,50 +1,57 @@
 import { TabPanel } from '@/components/shared/TabPanel';
-import { Navigation, htmlNav, reactNav } from '../components/ui/Navigation';
 import { CodeWrapper } from '@/components/shared/CodeWrapper';
-import { Header, htmlHeader, reactHeader } from '../components/ui/Header';
-import { TwitterProfile, reactProfile, htmlProfile } from '../components/ui/TwitterProfile';
-import { Pricing, reactPricing, htmlPricing } from '../components/motion/Pricing';
+import { DockHover, reactDockHover } from '@/components/motion/DockHover';
+import { Pricing, reactPricing } from '@/components/motion/Pricing';
+import { Images, reactImages } from '@/components/ui/Images';
+import { Accordion, reactAccordion } from '@/components/motion/Accordion';
 
 export default function Home() {
   return (
     <div className="space-y-8">
       <TabPanel
-        title="Navigation"
-        desc="Folder menu in dashboard navigation"
-        ui={<Navigation />}
-        codeHTML={<CodeWrapper code={htmlNav} />}
-        codeReact={<CodeWrapper code={reactNav} />}
+        title="Dock menu"
         note={
           <p>
-            Icons:{' '}
-            <a href="https://lucide.dev/" target="_blank" className='note'>
-              Lucide icon
+            Inspired by:{' '}
+            <a
+              href="https://x.com/jinyongftw/status/1739585482848342378"
+              target="_blank"
+              className="note"
+            >
+              x.com
             </a>
           </p>
         }
-        bgContainer='bg-gray-50'
+        ui={<DockHover />}
+        codeReact={<CodeWrapper code={reactDockHover} />}
       />
-      <TabPanel 
-        title="Header"
-        desc="Simple header"
-        ui={<Header />}
-        codeHTML={<CodeWrapper code={htmlHeader} />}
-        codeReact={<CodeWrapper code={reactHeader} />}
+      <TabPanel
+        title="Image list"
         note={
           <p>
-            Icons:{' '}
-            <a href="https://lucide.dev/" target="_blank" className='note'>
-              Lucide icon
+            Inspired by:{' '}
+            <a
+              href="https://x.com/bartek_marzec/status/1798078019770482740"
+              target="_blank"
+              className="note"
+            >
+              x.com
             </a>
           </p>
         }
-        bgContainer='bg-gray-50'
+        ui={<Images />}
+        codeReact={<CodeWrapper code={reactImages} />}
       />
-      <TabPanel 
-        title="Twitter/X profile card/widget"
-        ui={<TwitterProfile />}
-        codeHTML={<CodeWrapper code={htmlProfile} />}
-        codeReact={<CodeWrapper code={reactProfile} />}
+      <TabPanel
+        title="Accordion"
+        ui={<Accordion />}
+        codeReact={<CodeWrapper code={reactAccordion} />}
+      />
+      <TabPanel
+        title="Comparison Card"
+        note="Design source: Loom"
+        ui={<Pricing />}
+        codeReact={<CodeWrapper code={reactPricing} />}
       />
     </div>
   );
