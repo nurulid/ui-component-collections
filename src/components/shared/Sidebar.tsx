@@ -7,20 +7,23 @@ import { usePathname } from 'next/navigation';
 
 const sidebarMenu = [
   {
-    title: 'Motion UI',
+    title: 'Motion',
     link: '/',
     ready: true,
   },
   {
-    title: 'UI Components',
+    title: 'Components',
     link: '/ui',
     ready: true,
     // submenus: [
     //   { title: 'Navigation', link: '/ui', ready: true, },
     // ]
   },
+];
+
+const secondMenu = [
   {
-    title: 'Prototype',
+    title: 'Ksier',
     link: '/prototype/ksier',
     ready: true,
   },
@@ -37,9 +40,9 @@ const SidebarLink = (
       data-active={pathname === link}
       className={[
         'py-1 pr-2',
-        'block rounded border border-transparent',
+        'block rounded border-[.5px] border-transparent',
         'transition-all hover:pl-2',
-        'data-[active=true]:bg-white data-[active=true]:border data-[active=true]:border-gray-300 data-[active=true]:pl-2'
+        'data-[active=true]:bg-white data-[active=true]:border-gray-300 data-[active=true]:pl-2'
       ].join(' ')}
     >
       {title}
@@ -56,8 +59,21 @@ export const Sidebar = () => {
           UI Component Collections
         </h2>
         <p className='text-xs mb-10 text-gray-400'>Semantic, less &quot;div&quot;.</p>
+        <h3 className='mt-10 mb-2 uppercase opacity-50 text-xs'>UI</h3>
         <ul className="space-y-1">
           {sidebarMenu.map(({ title, link, ready }, i) => (
+            <li key={i}>
+              <SidebarLink
+                title={title}
+                link={link}
+                soon={!ready}
+              />
+            </li>
+          ))}
+        </ul>
+        <h3 className='mt-10 mb-2 uppercase opacity-50 text-xs'>Prototype</h3>
+        <ul className="space-y-1">
+          {secondMenu.map(({ title, link, ready }, i) => (
             <li key={i}>
               <SidebarLink
                 title={title}
