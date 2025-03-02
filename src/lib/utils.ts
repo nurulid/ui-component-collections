@@ -13,3 +13,7 @@ export function convertToSlug(title: string) {
     .replace(/\s+/g, '-')
     .replace(/-+/g, '-');
 }
+
+export function formatThousandSeparator(amount: number | string) {
+  return amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+}

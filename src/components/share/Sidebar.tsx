@@ -10,14 +10,14 @@ const sidebarMenu = [
     title: 'UI Components',
     link: '/',
     ready: true,
-    submenus: [
-      { title: 'Navigation', link: '/ui', ready: true, },
-    ]
+    // submenus: [
+    //   { title: 'Navigation', link: '/ui', ready: true, },
+    // ]
   },
   {
-    title: 'Radix UI (primitive)',
-    link: '/radix',
-    ready: false,
+    title: 'Prototype',
+    link: '/prototype/ksier',
+    ready: true,
   },
 ];
 
@@ -62,7 +62,7 @@ export const Sidebar = () => {
             </li>
           ))}
         </ul>
-        <p className="mt-auto text-xs text-gray-400">By <a href='https://nurulid.space' target='_blank' className='note'>Nurul ID</a></p>
+        <p className="mt-auto text-xs text-gray-400">By <a href='https://nurrul.com' target='_blank' className='note'>Nurul ID</a></p>
       </div>
     </section>
   );

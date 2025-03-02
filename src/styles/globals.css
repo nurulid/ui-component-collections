@@ -15,9 +15,21 @@
     font-family: var(--font-source-code) !important;
     @apply text-sm;
   }
+
+  .font-inconsolata {
+    font-family: var(--font-inconsolata);
+  }
+
+  .font-teko {
+    font-family: var(--font-teko);
+  }
 }
 
 @layer components {
+  .btn {
+    @apply p-2 inline-block text-center cursor-pointer transition-all active:scale-[0.96] shadow disabled:!bg-gray-200 disabled:!border-gray-300 disabled:cursor-not-allowed disabled:!shadow-none disabled:active:scale-100;
+  }
+  
   /* .up {
     @apply -translate-y-4 scale-125 text-white fill-white;
   } */
@@ -65,5 +77,41 @@
 
   .mail-sidebar .nav-bottom a.logout {
     @apply text-rose-500;
+  }
+  /* /// */
+
+  .tutup::after {
+    content: "";
+    @apply block h-1.5 w-3 bg-white absolute left-0 bottom-0 right-0;
+  }
+
+  .receipt {
+    overflow: hidden;
+  }
+  
+  .receipt-content {
+    animation: thermalPrint 6s ease-out forwards;
+  }
+  
+  .receipt-content-s {
+    animation: thermalPrints 2s ease-out forwards;
+  }
+}
+
+@keyframes thermalPrint {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes thermalPrints {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
   }
 }

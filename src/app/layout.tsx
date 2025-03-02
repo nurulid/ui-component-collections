@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Inter, Source_Code_Pro } from 'next/font/google';
+import { Inter, Source_Code_Pro, Inconsolata, Teko } from 'next/font/google';
 import '../styles/globals.css';
 import { Sidebar } from '@/components/share/Sidebar';
 
@@ -9,6 +9,18 @@ const sourceCodePro = Source_Code_Pro({
   subsets: ['latin'],
   variable: '--font-source-code',
   weight: ['400'],
+});
+
+const inconsolata = Inconsolata({
+  subsets: ["latin"],
+  variable: "--font-inconsolata",
+  weight: "400",
+});
+
+const teko = Teko({
+  subsets: ["latin"],
+  variable: "--font-teko",
+  weight: "500",
 });
 
 export const metadata: Metadata = {
@@ -23,7 +35,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${inter.className} ${sourceCodePro.variable}`}>
+      <body className={`${inter.className} ${sourceCodePro.variable} ${inconsolata.variable} ${teko.variable}`}>
         <main className="flex relative">
           <Sidebar />
           <section className="flex-grow min-h-screen w-[calc(100vw-280px)] py-4 px-10">
