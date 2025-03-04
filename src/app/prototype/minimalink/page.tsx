@@ -5,15 +5,15 @@ import { ArrowRight, Bell, Briefcase, FolderOpen, Home, Linkedin, Mail, Twitter,
 export default function page() {
   return (
     <>
-      <div className="pattern-lines">
+      <div className="minimalink pattern-lines rounded-lg border-[.5px] border-black">
         <div className="container">
           {/* <!-- Header --> */}
           <header>
             <nav>
-              <a href="#" className="btn btn-round">
+              <a href="#" className="btn2 btn-round">
                 <Home />
               </a>
-              <a href="#" className="btn btn-icon">
+              <a href="#" className="btn2 btn-icon">
                 <Bell />
                 Subscribe
               </a>
@@ -85,7 +85,7 @@ export default function page() {
                       <h3>Get Them</h3>
                       <p>New e-book out!</p>
                     </div>
-                    <a href="#" className="btn btn-sm btn-black">
+                    <a href="#" className="btn2 btn-sm btn-black">
                       Buy Now
                     </a>
                   </div>

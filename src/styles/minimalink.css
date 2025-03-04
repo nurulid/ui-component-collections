@@ -31,7 +31,7 @@
   box-sizing: border-box;
 }
 
-html,
+/* html,
 body {
   height: 100%;
 }
@@ -47,19 +47,19 @@ p {
 img {
   display: inline-block;
   max-width: 100%;
-}
+} */
 /* END OF: RESET */
 
-body {
+/* body {
   background: var(--PRIMARY-COLOR);
   font-size: 16px;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   line-height: 1.5;
   margin: 0;
-}
+} */
 
-.container {
+.minimalink .container {
   max-width: 450px;
   min-height: 100vh;
   margin: 0 auto;
@@ -67,35 +67,48 @@ body {
   padding: var(--PADD-XL);
 }
 
-.content {
+.minimalink .content {
   margin-bottom: 50px;
 }
 
 /* BASE ELEMENT */
-a {
+/* a {
   text-decoration: none;
   color: var(--COLOR-BASE);
   transition: var(--TRANSITION-BASE);
-}
+} */
 
 /* icon */
-svg{
+.minimalink svg{
   font-size: 16px; /* icon size in px */
 }
 /* END OF: BASE ELEMENT */
 
 /* COMPONENTS */
-.underline {
-  text-decoration: underline;
+.minimalink h1,
+.minimalink h2,
+.minimalink h3 {
+  font-weight: bold;
+}
+
+.minimalink h3 {
+  font-size: 1.17em;
+}
+
+.minimalink a {
+  text-decoration: none;
+  transition: var(--TRANSITION-BASE);
 }
 
 /* pattern for body */
-.pattern-lines {
+.minimalink {
   max-width: 450px;
   margin: 0 auto;
   opacity: 0.8;
   background-size: 20px 20px;
   background-image:  repeating-linear-gradient(to right, var(--COLOR-SECONDARY), var(--COLOR-SECONDARY) 1px, var(--COLOR-BASE--LIGHT) 1px, var(--COLOR-BASE--LIGHT));
+  font-size: 16px;
+  line-height: 1.5;
 }
 
 /* pattern for link-card */
@@ -213,7 +226,7 @@ svg{
 /* END OF: COMPONENTS */
 
 /* BUTTONS */
-.btn {
+.btn2 {
   background: var(--COLOR-SECONDARY);
   padding: var(--PADD-BASE) var(--PADD-XL);
   border-radius: var(--ROUNDED-MD);
@@ -221,7 +234,7 @@ svg{
   font-size: 16px;
 }
 
-.btn:hover {
+.btn2:hover {
   box-shadow: none;
   transform: scale(1.05);
 }
@@ -248,18 +261,18 @@ svg{
   margin-right: 5px;
 }
 
-.btn.btn-sm {
+.btn2.btn-sm {
   font-size: 13px;
   font-weight: bold;
 }
 
-.btn.btn-black {
+.btn2.btn-black {
   background-color: var(--COLOR-BASE);
   color: var(--COLOR-SECONDARY);
   border: 1px solid var(--COLOR-BASE);
 }
 
-.btn.btn-black:hover {
+.btn2.btn-black:hover {
   background-color: var(--COLOR-SECONDARY);
   color: var(--COLOR-BASE);
   transform: scale(1.05);
