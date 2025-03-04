@@ -79,7 +79,7 @@ a {
 }
 
 /* icon */
-i {
+svg{
   font-size: 16px; /* icon size in px */
 }
 /* END OF: BASE ELEMENT */
@@ -91,6 +91,8 @@ i {
 
 /* pattern for body */
 .pattern-lines {
+  max-width: 450px;
+  margin: 0 auto;
   opacity: 0.8;
   background-size: 20px 20px;
   background-image:  repeating-linear-gradient(to right, var(--COLOR-SECONDARY), var(--COLOR-SECONDARY) 1px, var(--COLOR-BASE--LIGHT) 1px, var(--COLOR-BASE--LIGHT));
@@ -137,7 +139,7 @@ i {
   transform: scale(1.30);
 }
 
-.link-icon i {
+.link-icon svg{
   font-size: 20px;
 }
 
@@ -180,16 +182,16 @@ i {
   margin-bottom: var(--PADD-XL);
 }
 
-.link-card__header > i {
+.link-card__header > svg{
   font-size: 17px;
   opacity: 0.7;
 }
 
-.link-card__header i {
+.link-card__header svg{
   transition: var(--TRANSITION-BASE);
 }
 
-.link-card:hover i:last-child {
+.link-card:hover svg:last-child {
   transform: rotate(-45deg);
   translate: 5px -5px;
   
@@ -232,9 +234,17 @@ i {
   line-height: 42px;
   border-radius: var(--ROUNDED-FULL);
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.btn-icon i {
+.btn-icon {
+  display: flex;
+  gap: 4px;
+}
+
+.btn-icon svg{
   margin-right: 5px;
 }
 

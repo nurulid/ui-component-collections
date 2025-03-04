@@ -28,7 +28,7 @@ const secondMenu = [
     ready: true,
   },
   {
-    title: 'Minimalink',
+    title: 'MinimaLink',
     link: '/prototype/minimalink',
     ready: true,
   },
@@ -44,7 +44,7 @@ const SidebarLink = (
       href={link}
       data-active={pathname === link}
       className={[
-        'py-1 pr-2',
+        'py-1 pr-2 text-sm',
         'block rounded border-[.5px] border-transparent',
         'transition-all hover:pl-2',
         'data-[active=true]:bg-white data-[active=true]:border-gray-300 data-[active=true]:pl-2',
