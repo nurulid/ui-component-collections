@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react"
 import type { Metadata } from 'next';
 import { Inter, Source_Code_Pro, Inconsolata, Teko } from 'next/font/google';
 import '../styles/globals.css';
@@ -42,6 +43,7 @@ export default function RootLayout({
             {children}
           </section>
         </main>
+        <Analytics />
       </body>
     </html>
   );
