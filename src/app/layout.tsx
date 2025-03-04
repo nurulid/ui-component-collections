@@ -38,7 +38,7 @@ export default function RootLayout({
       <body className={`${inter.className} ${sourceCodePro.variable} ${inconsolata.variable} ${teko.variable}`}>
         <main className="flex relative">
           <Sidebar />
-          <section className="flex-grow min-h-screen w-[calc(100vw-280px)] py-4 px-10">
+          <section className="flex-grow min-h-screen min-w-[800px] py-4 px-10">
             <div className="max-w-7xl w-full mx-auto">{children}</div>
           </section>
         </main>
