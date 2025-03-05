@@ -102,8 +102,9 @@ export const Sidebar = () => {
   return (
     <section className="min-w-[280px] p-4 sticky top-0 h-screen">
       <div className="rounded-md bg-griey h-full p-4 border flex flex-col">
-        <h2 className="mb-2 font-mono font-semibold border-b pb-2">
-          UI Component Collections
+        <h2 className="mb-2 font-mono font-semibold border-b pb-2 text-lg">
+          UI Component
+          <span className='opacity-50 font-normal block text-xs'>Collections</span>
         </h2>
         <p className="text-xs mb-10 text-gray-400">
           Semantic, less &quot;div&quot;.
@@ -124,8 +125,8 @@ export const Sidebar = () => {
             </li>
           ))}
         </ul>
-        <div className="mt-auto text-xs space-y-2 opacity-50">
-          <div className="group space-y-2 ">
+        <div className="mt-auto text-xs space-y-1 opacity-50">
+          <div className="group space-y-2">
             <a
               href="https://nurrul.com"
               target="_blank"
@@ -136,7 +137,7 @@ export const Sidebar = () => {
             </a>
             <p>by Nurul ID</p>
           </div>
-          <p>ⓒ 2024 - {currentYear}</p>
+          <p className="text-[10px]">ⓒ 2024 - {currentYear}</p>
         </div>
       </div>
     </section>
