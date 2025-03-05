@@ -4,6 +4,7 @@ import { PropsWithChildren } from 'react';
 import Link from 'next/link';
 import { Badge } from './Badge';
 import { usePathname } from 'next/navigation';
+import { getCurrentYear } from '@/lib/utils';
 
 const sidebarMenu = [
   {
@@ -96,6 +97,8 @@ export const SidebarMobile = () => {
 };
 
 export const Sidebar = () => {
+  const currentYear = getCurrentYear();
+
   return (
     <section className="min-w-[280px] p-4 sticky top-0 h-screen">
       <div className="rounded-md bg-griey h-full p-4 border flex flex-col">
@@ -121,12 +124,20 @@ export const Sidebar = () => {
             </li>
           ))}
         </ul>
-        <p className="mt-auto text-xs text-gray-400">
-          By{' '}
-          <a href="https://nurrul.com" target="_blank" className="note">
-            Nurul ID
-          </a>
-        </p>
+        <div className="mt-auto text-xs space-y-2 opacity-50">
+          <div className="group space-y-2 ">
+            <a
+              href="https://nurrul.com"
+              target="_blank"
+              className="note hidden group-hover:inline-block transition-all duration-300 ease-out
+                   group-hover:animate-[slideUp_0.3s_ease-out]"
+            >
+              https://nurrul.com
+            </a>
+            <p>by Nurul ID</p>
+          </div>
+          <p>ⓒ 2024 - {currentYear}</p>
+        </div>
       </div>
     </section>
   );

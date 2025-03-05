@@ -17,3 +17,8 @@ export function convertToSlug(title: string) {
 export function formatThousandSeparator(amount: number | string) {
   return amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 }
+
+// Get current year
+export function getCurrentYear() {
+  return new Date().getFullYear();
+}
