@@ -9,6 +9,7 @@ import {
   reactProfile,
   htmlProfile,
 } from '@/components/ui/TwitterProfile';
+import { PricingTable, htmlPricingTable, reactPricingTable } from '@/components/ui/PricingTable';
 
 export default function page() {
   return (
@@ -19,6 +20,13 @@ export default function page() {
       </div>
       <div className="h-8" />
       <div className="space-y-8">
+        <TabPanel
+          title="Pricing table"
+          desc='Pricing table without table elements'
+          ui={<PricingTable />}
+          codeHTML={<CodeWrapper code={htmlPricingTable} />}
+          codeReact={<CodeWrapper code={reactPricingTable} />}
+        />
         <TabPanel
           title="Navigation"
           desc="Folder menu in dashboard navigation"
