@@ -9,10 +9,12 @@ export const SelectedMenu = ({
   selectedFoods,
   selectedDrinks,
   onCancel,
+  orderedMenu,
 }: {
   selectedFoods: MenuItem[];
   selectedDrinks: MenuItem[];
   onCancel: () => void;
+  orderedMenu: MenuItem[];
 }) => {
   return (
     <>
@@ -44,6 +46,7 @@ export const SelectedMenu = ({
                 <p className="opacity-50">No foods selected</p>
               )}
             </div>
+            <hr />
             <div>
               <h3 className="font-semibold">Drinks</h3>
               {selectedDrinks.length > 0 ? (
@@ -69,9 +72,12 @@ export const SelectedMenu = ({
           {selectedFoods.length > 0 || selectedDrinks.length > 0 ? (
             <button
               onClick={onCancel}
-              className="w-full border border-black bg-black text-white mt-auto btn"
+              className={[
+                "w-full border text-white mt-auto btn",
+                orderedMenu.length > 0 ? "border-black bg-black" : "bg-red-500 border-red-600",
+              ].join(' ')}
             >
-              Cancel
+              {orderedMenu.length > 0 ? "New order" : "Cancel"}
             </button>
           ) : null}
         </div>

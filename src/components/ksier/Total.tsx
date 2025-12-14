@@ -94,12 +94,6 @@ export const Total = ({
       >
         Order
       </button>
-      {/* <button
-        onClick={onCancel}
-        className="w-full border border-black bg-black text-white mt-auto btn"
-      >
-        New order
-      </button> */}
     </>
   );
 };

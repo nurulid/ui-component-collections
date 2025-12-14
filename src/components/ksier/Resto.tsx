@@ -93,6 +93,7 @@ export const Resto = () => {
           selectedFoods={selectedFoodItems}
           selectedDrinks={selectedDrinkItems}
           onCancel={handleCancel}
+          orderedMenu={orderedItems}
         />
       </div>
     </div>
