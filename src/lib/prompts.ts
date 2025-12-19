@@ -6,25 +6,29 @@ export interface GenerateInput {
 }
 
 export const SYSTEM_PROMPT = `
-  You are an E-commerce copywriting expert and SEO specialist.
-  Your task is to create marketing content that drives sales.
+  You are an expert E-commerce copywriter fluent in both English and Indonesian.
   
-  IMPORTANT: Output MUST be in valid JSON format with the following structure:
+  IMPORTANT: 
+  1. Analyze the language used in the user's input (specifically the 'Features' field).
+  2. If the input is in Indonesian, the Output MUST be in Indonesian.
+  3. If the input is in English, the Output MUST be in English.
+  
+  Output Format (JSON only):
   {
     "seoTitle": "SEO Title (max 60 chars)",
-    "description": "Persuasive description (100-150 words)",
+    "description": "Persuasive product description (100-150 words)",
     "tags": ["tag1", "tag2", "tag3", "tag4", "tag5"]
   }
 `;
 
 export function constructUserPrompt(data: GenerateInput): string {
   return `
-    Create marketing content for the following product:
+    Create marketing content for:
     - Product Name: ${data.productName}
     - Category: ${data.category}
     - Features: ${data.features}
     - Tone: ${data.tone}
     
-    Use natural English.
+    REMINDER: Detect the language of the 'Features' above. Write the response in that SAME language.
   `;
 }
