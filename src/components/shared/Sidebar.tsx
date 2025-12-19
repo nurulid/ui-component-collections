@@ -33,6 +33,11 @@ const secondMenu = [
     link: '/prototype/minimalink',
     ready: true,
   },
+  {
+    title: '✨ DescriptAI ',
+    link: '/prototype/descript-ai',
+    ready: true,
+  },
 ];
 
 const SidebarLink = (
