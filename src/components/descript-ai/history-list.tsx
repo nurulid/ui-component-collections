@@ -1,5 +1,6 @@
 import { ResultData } from './result-display';
 import { GenerateInput } from '@/lib/prompts';
+import HistoryItem from './history-item';
 
 // tipe data untuk History Item
 export interface HistoryItem {
@@ -65,26 +66,11 @@ export default function HistoryList({
 
       <div className="space-y-3 max-h-[600px] overflow-y-auto pr-2 custom-scrollbar">
         {history.map((item) => (
-          <div
+          <HistoryItem
             key={item.id}
-            onClick={() => onSelect(item)}
-            className="p-3 rounded-lg border border-slate-100 hover:border-blue-300 hover:bg-blue-50 cursor-pointer transition-all group"
-          >
-            <div className="flex justify-between items-start">
-              <span className="text-xs font-semibold text-blue-600 truncate max-w-[150px]">
-                {item.input.productName}
-              </span>
-              <span className="text-[10px] text-slate-400">
-                {new Date(item.timestamp).toLocaleTimeString([], {
-                  hour: '2-digit',
-                  minute: '2-digit',
-                })}
-              </span>
-            </div>
-            <p className="text-xs text-slate-600 mt-1 line-clamp-2">
-              {item.result.seoTitle}
-            </p>
-          </div>
+            item={item}
+            onClick={onSelect}
+          />
         ))}
       </div>
     </div>
