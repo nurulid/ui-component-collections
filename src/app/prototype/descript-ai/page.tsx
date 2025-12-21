@@ -1,14 +1,14 @@
 import GeneratorFeature from "@/components/descript-ai/generator-feature";
 
 export const metadata = {
-  title: "AI Marketing Generator | Create Copywriting Instantly",
+  title: "DescriptAI | AI Marketing Generator",
   description: "Free tool to generate e-commerce product descriptions using AI.",
 };
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-2xl mx-auto">
+    <main className=" bg-gray-50/50 py-12 px-4 sm:px-6 lg:px-8 border rounded-xl">
+      <div className="max-w-6xl mx-auto">
         
         <div className="text-center mb-10">
           <h1 className="text-4xl font-extrabold text-gray-900 tracking-tight">
