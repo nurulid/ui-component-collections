@@ -1,4 +1,4 @@
-interface ResultData {
+export interface ResultData {
   seoTitle: string;
   description: string;
   tags: string[];
