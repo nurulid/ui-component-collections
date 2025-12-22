@@ -1,36 +1,20 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# UI Component Collections
 
-## Getting Started
+This repository contains various UI components built with Tailwind CSS. The components are grouped into categories such as Motion, UI, and Shared components. Each component is accompanied by a demo page and a code snippet that can be easily copied and pasted into your project.
 
-First, run the development server:
+The UI components are designed to be reusable and easily customizable. They are built using Tailwind's utility-first approach, which means that they are highly customizable and can be easily styled to fit your project's design.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+The Motion components are built using Framer Motion, which allows for smooth and performant animations. 
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+All components are built using React and are designed to be used across multiple pages and projects.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+# Prototypes of Web Apps
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+These prototypes are not full production apps with backend logic, but are fully functional in the front end, built to demonstrate core user flows, visual design, and interactive feel.
 
-## Learn More
+These prototypes serve as a design and development playground, showcasing how modern front-end tools like Tailwind for styling, CSS for foundational animations, and Framer Motion for advanced gestures to create compelling, interactive user interfaces before full scale development.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+*This repository is a work in progress and new components are being added regularly. If there is a specific component that you would like to see added, please feel free to open an issue and let me know.*
