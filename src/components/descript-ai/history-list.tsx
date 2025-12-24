@@ -1,78 +1,98 @@
-import { ResultData } from './result-display';
-import { GenerateInput } from '@/lib/prompts';
-import HistoryItem from './history-item';
+import { useMemo } from 'react'
+import { ResultData } from './result-display'
+import { GenerateInput } from '@/lib/prompts'
+import HistoryItemComponent from './history-item'
+import { SAMPLE_DATA } from '@/lib/sample-data'
 
-// tipe data untuk History Item
 export interface HistoryItem {
-  id: string;
-  timestamp: number;
-  input: GenerateInput;
-  result: ResultData;
+  id: string
+  timestamp: number
+  input: GenerateInput
+  result: ResultData
 }
 
 interface HistoryListProps {
-  history: HistoryItem[];
-  onSelect: (item: HistoryItem) => void;
-  onClear: () => void;
+  history: HistoryItem[]
+  currentResult: ResultData | null
+  onSelect: (item: HistoryItem) => void
+  onClear: () => void
 }
 
-/**
- * Displays a list of generated history items with the ability to select and clear them.
- * 
- * @component
- * @param {HistoryListProps} props - The component props
- * @param {Array} props.history - Array of history items to display
- * @param {Function} props.onSelect - Callback function invoked when a history item is clicked
- * @param {Function} props.onClear - Callback function invoked when the "Clear All" button is clicked
- * @returns {React.ReactElement} A card component displaying the history list or an empty state message
- * 
- * @remarks
- * - If no history items exist, displays an empty state message
- * - History items are stored locally in the browser
- * - The list is scrollable with a maximum height of 600px
- * - Each item displays the product name, SEO title preview, and timestamp
- */
 export default function HistoryList({
   history,
+  currentResult,
   onSelect,
   onClear,
 }: HistoryListProps) {
-  if (history.length === 0) {
-    return (
-      <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-200 text-center h-fit">
-        <p className="text-slate-500 text-sm">No history yet.</p>
-      </div>
-    );
-  }
 
-  console.log('Rendering HistoryList with items:', history);
+  const sampleData = SAMPLE_DATA['descript-ai'];
+  
+  // LOGIKA DETEKSI SAMPLE:
+  // cek apakah item pertama di history ID-nya ada di daftar SAMPLE_DATA?
+  // pake useMemo biar gak hitung ulang terus tiap render (optional tapi good practice)
+  const isSampleMode = useMemo(() => {
+    if (history.length === 0) return false;
+    
+    // Cek: Apakah ada item di history yang ID-nya sama dengan salah satu ID di SAMPLE_DATA?
+    return history.some(item => sampleData.some(sample => sample.id === item.id));
+  }, [history, sampleData]);
+
+  console.log('HistoryList rendered. Mode:', isSampleMode ? 'Sample Data' : 'User Data');
 
   return (
-    <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-200 h-fit sticky top-6">
+    <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-200 h-fit sticky top-6 mb-10">
       <div className="flex justify-between items-center mb-4">
         <div>
-          <h3 className="font-bold text-slate-800">Generated history</h3>
+          <h3 className="font-bold text-slate-800">
+            {isSampleMode ? 'Example Result' : 'Generated History'}
+          </h3>
           <p className="text-xs text-slate-500">
-            All history is saved locally in your browser
+            {isSampleMode
+              ? 'Try generating content to see it here'
+              : 'All history is saved locally in your browser'}
           </p>
         </div>
-        <button
-          onClick={onClear}
-          className="text-xs text-red-500 hover:text-red-700 hover:underline"
-        >
-          Clear All
-        </button>
+
+        {!isSampleMode && history.length > 0 && (
+          <button
+            onClick={onClear}
+            className="text-xs text-red-500 hover:text-red-700 hover:underline"
+          >
+            Clear All
+          </button>
+        )}
       </div>
 
       <div className="space-y-3 max-h-[600px] overflow-y-auto pr-2 custom-scrollbar">
-        {history.map((item) => (
-          <HistoryItem
-            key={item.id}
-            item={item}
-            onClick={onSelect}
-          />
-        ))}
+        {!isSampleMode && history.length === 0 && (
+            <div className="text-center py-8 text-slate-400 text-sm">
+                No history yet.
+            </div>
+        )}
+
+        {history.map((item) => {
+          const isActive = currentResult 
+            ? item.result.seoTitle === currentResult.seoTitle 
+            : false
+
+          return (
+            <HistoryItemComponent
+              key={item.id}
+              item={item}
+              isSelected={isActive}
+              onClick={() => onSelect(item)}
+            />
+          )
+        })}
       </div>
+
+      {isSampleMode && (
+        <div className="mt-4 pt-4 border-t border-dashed border-slate-200 text-center">
+          <p className="text-xs text-slate-400 italic">
+            👆 This is a sample data to show you how it looks.
+          </p>
+        </div>
+      )}
     </div>
-  );
+  )
 }

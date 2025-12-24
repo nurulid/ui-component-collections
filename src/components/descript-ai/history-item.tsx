@@ -2,14 +2,18 @@ import { HistoryItem as HistoryItemType } from './history-list';
 
 interface HistoryItemProps {
   item: HistoryItemType;
+  isSelected?: boolean;
   onClick: (item: HistoryItemType) => void;
 }
 
-export default function HistoryItem({ item, onClick }: HistoryItemProps) {
+export default function HistoryItem({ item, isSelected, onClick }: HistoryItemProps) {
   return (
     <div
       onClick={() => onClick(item)}
-      className="p-3 rounded-lg border border-slate-100 hover:border-fuchsia-300 hover:bg-fuchsia-50 cursor-pointer transition-all group space-y-4"
+      className={[
+        'p-3 rounded-lg border border-slate-100 hover:border-fuchsia-300 hover:bg-fuchsia-50 cursor-pointer transition-all group space-y-4',
+        isSelected ? 'border-fuchsia-500 bg-fuchsia-50' : '',
+      ].join(' ')}
     >
       <div>
         <h3 className="font-semibold text-fuchsia-600 line-clamp-2">

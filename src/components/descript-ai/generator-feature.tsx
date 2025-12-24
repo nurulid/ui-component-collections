@@ -1,56 +1,43 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { GenerateInput } from '@/lib/prompts';
 import GeneratorForm from './generator-form';
-import ResultDisplay, { ResultData } from './result-display';
+import ResultDisplay from './result-display';
 import HistoryList, { HistoryItem } from './history-list';
+import {
+  useDescriptAIStore,
+  useHistory,
+  useCurrentResult,
+  useIsLoading,
+  useError,
+} from '@/store/descript-ai-store';
 
 export default function GeneratorFeature() {
-  const [isLoading, setIsLoading] = useState(false);
-  const [result, setResult] = useState<ResultData | null>(null);
-  const [error, setError] = useState('');
-  const [history, setHistory] = useState<HistoryItem[]>([]);
+  const history = useHistory();
+  const currentResult = useCurrentResult();
+  const isLoading = useIsLoading();
+  const error = useError();
 
-  // 1. load history dari LocalStorage saat pertama kali load
+  const {
+    setLoading,
+    setError,
+    setCurrentResult,
+    addToHistory,
+    selectHistoryItem,
+    clearHistory,
+    loadSampleData,
+  } = useDescriptAIStore();
+
+  // EFFECT: Load sample data saat pertama kali render
   useEffect(() => {
-    const savedHistory = localStorage.getItem('descriptai-history');
-    if (savedHistory) {
-      try {
-        setHistory(JSON.parse(savedHistory));
-      } catch (e) {
-        console.error("Failed to parse history", e);
-      }
-    }
-  }, []);
+    loadSampleData();
+  }, [loadSampleData]);
 
-  // 2. save to LocalStorage
-  const saveToHistory = (inputData: GenerateInput, resultData: ResultData) => {
-    const newItem: HistoryItem = {
-      id: Date.now().toString(), // simple ID based on timestamp
-      timestamp: Date.now(),
-      input: inputData,
-      result: resultData
-    };
-
-    const updatedHistory = [newItem, ...history]; // add new item to top
-    setHistory(updatedHistory);
-    localStorage.setItem('descriptai-history', JSON.stringify(updatedHistory));
-  };
-
-  // 3. clear history
-  const clearHistory = () => {
-    if (confirm('Are you sure you want to clear all history?')) {
-      setHistory([]);
-      localStorage.removeItem('descriptai-history');
-    }
-  };
-
-  // handle form generate submission
   const handleGenerate = async (formData: GenerateInput) => {
-    setIsLoading(true);
+    setLoading(true);
     setError('');
-    setResult(null);
+    setCurrentResult(null);
 
     try {
       const response = await fetch('/api/generate', {
@@ -65,23 +52,21 @@ export default function GeneratorFeature() {
         throw new Error(json.error || 'Terjadi kesalahan');
       }
 
-      setResult(json.data);
-      
-      // save to history after successful generate
-      saveToHistory(formData, json.data);
-
+      // set result add to history via store action
+      addToHistory(formData, json.data);
+      window.scrollTo({ top: 10, behavior: 'smooth' });
     } catch (err) {
       setError('Failed to generate content. Please try again.');
       console.error(err);
     } finally {
-      setIsLoading(false);
+      setLoading(false);
     }
   };
 
   // view history item
   const handleSelectHistory = (item: HistoryItem) => {
-    setResult(item.result);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    selectHistoryItem(item);
+    window.scrollTo({ top: 100, behavior: 'smooth' });
   };
 
   return (
@@ -95,13 +80,15 @@ export default function GeneratorFeature() {
           </div>
         )}
 
-        {result && <ResultDisplay data={result} />}
+        {/* karena saat loading data yang dikirim adalah null, tambhkan tipe datanya null */}
+        {(isLoading || currentResult) && <ResultDisplay data={currentResult} />}
       </div>
 
       <div className="lg:col-span-1">
-        <HistoryList 
-          history={history} 
-          onSelect={handleSelectHistory} 
+        <HistoryList
+          currentResult={currentResult}
+          history={history}
+          onSelect={handleSelectHistory}
           onClear={clearHistory}
         />
       </div>
