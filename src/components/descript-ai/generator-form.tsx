@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useDescriptAIForm } from '@/hooks/useDescriptAIForm'
 import { CATEGORIES, TONES } from "@/lib/constants";
 import { GenerateInput } from "@/lib/prompts";
 
@@ -10,16 +10,13 @@ interface GeneratorFormProps {
 }
 
 export default function GeneratorForm({ isLoading, onSubmit }: GeneratorFormProps) {
-  const [formData, setFormData] = useState<GenerateInput>({
-    productName: "",
-    category: CATEGORIES[0],
-    features: "",
-    tone: TONES[0],
-  });
+  // use custom hook untuk manage form state
+  const { formData, updateFormData, resetForm } = useDescriptAIForm()
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     onSubmit(formData);
+    resetForm();
   };
 
   return (
@@ -34,7 +31,7 @@ export default function GeneratorForm({ isLoading, onSubmit }: GeneratorFormProp
           className="w-full p-2 border rounded-md focus:ring-2 focus:ring-fuchsia-500 outline-none transition-all"
           placeholder="e.g., Turbo X Running Shoes"
           value={formData.productName}
-          onChange={(e) => setFormData({ ...formData, productName: e.target.value })}
+          onChange={(e) => updateFormData({ productName: e.target.value })}
         />
       </div>
 
@@ -45,7 +42,7 @@ export default function GeneratorForm({ isLoading, onSubmit }: GeneratorFormProp
           <select
             className="w-full p-2 border rounded-md bg-white focus:ring-2 focus:ring-fuchsia-500 outline-none"
             value={formData.category}
-            onChange={(e) => setFormData({ ...formData, category: e.target.value })}
+            onChange={(e) => updateFormData({ category: e.target.value })}
           >
             {CATEGORIES.map((c) => <option key={c} value={c}>{c}</option>)}
           </select>
@@ -56,7 +53,7 @@ export default function GeneratorForm({ isLoading, onSubmit }: GeneratorFormProp
           <select
             className="w-full p-2 border rounded-md bg-white focus:ring-2 focus:ring-fuchsia-500 outline-none"
             value={formData.tone}
-            onChange={(e) => setFormData({ ...formData, tone: e.target.value })}
+            onChange={(e) => updateFormData({ tone: e.target.value })}
           >
             {TONES.map((t) => <option key={t} value={t}>{t}</option>)}
           </select>
@@ -72,7 +69,7 @@ export default function GeneratorForm({ isLoading, onSubmit }: GeneratorFormProp
           className="w-full p-2 border rounded-md focus:ring-2 focus:ring-fuchsia-500 outline-none transition-all"
           placeholder="e.g., Lightweight material, waterproof, memory foam sole..."
           value={formData.features}
-          onChange={(e) => setFormData({ ...formData, features: e.target.value })}
+          onChange={(e) => updateFormData({ features: e.target.value })}
         />
       </div>
 
@@ -84,5 +81,5 @@ export default function GeneratorForm({ isLoading, onSubmit }: GeneratorFormProp
         {isLoading ? "Generating Content..." : "Generate Copy 🚀"}
       </button>
     </form>
-  );
+  )
 }
