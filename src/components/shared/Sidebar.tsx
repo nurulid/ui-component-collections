@@ -118,7 +118,7 @@ export const Sidebar = () => {
             >
               https://nurrul.com
             </a>
-            <p>by Nurul ID</p>
+            <p>by Nurul Insani Dewi</p>
           </div>
           <p className="text-[10px]">ⓒ 2024 - {currentYear}</p>
         </div>
