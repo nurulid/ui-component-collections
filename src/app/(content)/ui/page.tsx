@@ -10,6 +10,7 @@ import {
   htmlProfile,
 } from '@/components/ui/TwitterProfile';
 import { PricingTable, htmlPricingTable, reactPricingTable } from '@/components/ui/PricingTable';
+import { htmlTaskCard, TaskCard } from '@/components/ui/TaskCard';
 
 export default function page() {
   return (
@@ -20,6 +21,24 @@ export default function page() {
       </div>
       <div className="h-8" />
       <div className="space-y-8">
+        <TabPanel
+          title="Task card"
+          desc='Task card with dashed border container'
+          ui={<TaskCard />}
+          codeHTML={<CodeWrapper code={htmlTaskCard} />}
+          note={
+            <p>
+              Inspired by:{' '}
+              <a
+                href="https://dribbble.com/shots/26390239-Task-Card-UI-Design"
+                target="_blank"
+                className="note"
+              >
+                Dribbble
+              </a>
+            </p>
+          }
+        />
         <TabPanel
           title="Pricing table"
           desc='Pricing table without table elements'
