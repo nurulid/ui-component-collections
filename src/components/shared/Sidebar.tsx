@@ -5,14 +5,19 @@ import { Calculator, LayoutTemplate, Sparkles } from 'lucide-react';
 import { SidebarItem, SidebarLink } from './SidebarLink';
 
 const sidebarMenu: SidebarItem[] = [
+  // {
+  //   title: 'Components',
+  //   link: '/',
+  //   isNew: false,
+  // },
   {
-    title: 'Motion',
+    title: 'Blocks',
     link: '/',
     isNew: false,
   },
   {
-    title: 'Components',
-    link: '/ui',
+    title: 'Motion',
+    link: '/motion',
     isNew: false,
   },
 ];
@@ -84,10 +89,10 @@ export const Sidebar = () => {
     <section className="min-w-[280px] p-4 sticky top-0 h-screen">
       <div className="rounded-md bg-griey h-full p-4 border flex flex-col">
         <h2 className="mb-2 font-mono font-semibold border-b pb-2 text-lg">
-          UI Component
-          <span className="opacity-50 font-normal block text-xs">
-            Collections
-          </span>
+          UI Collections
+          {/* <span className="opacity-50 font-normal block text-xs">
+            -
+          </span> */}
         </h2>
         <p className="text-xs mb-10 text-gray-400">
           Semantic, less &quot;div&quot;.
