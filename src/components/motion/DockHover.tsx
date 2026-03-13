@@ -28,7 +28,7 @@ export const reactDockHover = `const Menu = ({
         }}
         transition={{ type: 'spring', bounce: 0.3, duration: 0.8 }}
       >
-        <span
+        <Link
           {...menuProps}
           className="inline-block p-3 border border-white/20 rounded-full text-white/80 bg-black fill-white/80 relative transition-all shadow-md"
         >
@@ -55,7 +55,7 @@ export const reactDockHover = `const Menu = ({
               </>
             )}
           </AnimatePresence>
-        </span>
+        </Link>
       </motion.div>
     </motion.div>
   );
@@ -105,7 +105,7 @@ const Menu = ({
         }}
         transition={{ type: 'spring', bounce: 0.3, duration: 0.8 }}
       >
-        <span
+        <Link
           {...menuProps}
           className="inline-block p-3 border border-white/20 rounded-full text-white/80 bg-black fill-white/80 relative transition-all shadow-md"
         >
@@ -132,7 +132,7 @@ const Menu = ({
               </>
             )}
           </AnimatePresence>
-        </span>
+        </Link>
       </motion.div>
     </motion.div>
   );
